@@ -1,0 +1,11 @@
+cd /Users/marzec01/Desktop/svn/trunk/phds/Jack/transcriptomics/code
+
+./MergeFiles.pl -f1 /Users/marzec01/Desktop/Meta_genes.txt -f2 /Users/marzec01/Desktop/Meta_TumourvsNormal_DEbound.txt -c 2 -o /Users/marzec01/Desktop/Meta_genes_TumourvsNormal_DEbound.txt
+
+./MergeFiles.pl -f1 /Users/marzec01/Desktop/Meta_genes_TumourvsNormal_DEbound.txt -f2 /Users/marzec01/Desktop/Meta_HGPINvsNormal_DEbound.txt -c 2 -o /Users/marzec01/Desktop/Meta_genes_TumourvsNormal_HGPINvsNormal_DEbound.txt
+
+./MergeFiles.pl -f1 /Users/marzec01/Desktop/Meta_genes_TumourvsNormal_HGPINvsNormal_DEbound.txt -f2 /Users/marzec01/Desktop/Meta_TumourvsHGPIN_DEbound.txt -c 2 -o /Users/marzec01/Desktop/Meta_genes_TumourvsNormal_HGPINvsNormal_TumourvsHGPIN_DEbound.txt
+
+./MergeFiles.pl -f1 /Users/marzec01/Desktop/Meta_genes_TumourvsNormal_HGPINvsNormal_TumourvsHGPIN_DEbound.txt -f2 /Users/marzec01/Desktop/Meta_Tumour_metvsTumour_DEbound.txt -c 2 -o /Users/marzec01/Desktop/Meta_genes_TumourvsNormal_HGPINvsNormal_TumourvsHGPIN_Tumour_metvsTumour_DEbound.txt
+
+./MergeFiles.pl -f1 /Users/marzec01/Desktop/Meta_genes_TumourvsNormal_HGPINvsNormal_TumourvsHGPIN_Tumour_metvsTumour_DEbound.txt -f2 /Users/marzec01/Desktop/Meta_MetastasisvsTumour_DEbound.txt -c 2 -o /Users/marzec01/Desktop/Meta_genes_TumourvsNormal_HGPINvsNormal_TumourvsHGPIN_Tumour_metvsTumour_MetastasisvsTumour_DEbound.txt

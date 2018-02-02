@@ -1,0 +1,47 @@
+### Set up apache server for PIXdb version of BoB
+
+ps -ef|grep http
+
+ps -ef|grep httpd
+
+
+### To set Apache on local machine follow the steps in on the following website
+
+https://coolestguidesontheplanet.com/get-apache-mysql-php-and-phpmyadmin-working-on-osx-10-11-el-capitan/
+
+
+### Once Apache is set, turn on PHP (LoadModule php5_module libexec/apache2/libphp5.so) by uncommenting a line in the httpd.conf file (need to be root user)
+
+vi /etc/apache2/httpd.conf
+
+
+### If encountering problems see if there is anything wrong in its config file by running apachectl configtest. If the error is "AH00526: Syntax error on line 20 of /private/etc/apache2/extra/httpd-mpm.conf…" then go to
+
+/etc/apache2/extra
+
+# and restored the httpd-mpm.conf file
+
+sudo mv httpd-mpm.conf httpd-mpm.conf.elcapitan
+sudo mv httpd-mpm.conf~orig httpd-mpm.conf
+
+
+### Setting directory permissions
+
+### If there is any problem with accessing folders check this website (follow instructions for For OSX 10.10 Apache 2.4) https://coolestguidesontheplanet.com/forbidden-403-you-dont-have-permission-to-access-username-on-this-server/
+
+### Must be root
+
+cd /etc/apache2/users
+
+vi marzec01.conf
+
+<Directory "/Users/username/Sites/">
+AllowOverride All
+Options Indexes MultiViews FollowSymLinks
+Require all granted
+</Directory>
+
+### Restart the server
+
+sudo apachectl restart
+

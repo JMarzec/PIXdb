@@ -1,0 +1,41 @@
+###############################################################
+### To debug the php scripts 
+###############################################################
+
+### in the /Library/WebServer/Documents/PIXdb/pages/scripts/loading_results.php
+
+### add printing comments
+
+  print_r($geo_folders);
+  echo $absolute_root_dir;
+  echo "geo_folders: $ae_accessions";
+
+  print_r($ae_accessions);
+
+### and then run the script from the browser
+
+http://localhost/PIXdb/pages/scripts/loading_results.php?pmid=18596959
+
+
+### The printed variables will appear at the top of the page (depending where the "print"/"echo" comments were located in the script)
+
+
+###############################################################
+### To debug the script launching R analyses
+###############################################################
+
+### Add "error_log" command to the scipt 
+  error_log("Rscript LiveGeneExpression.R --exp_file $results_files_string --target $target_file --colouring \"Target\" --gene \"$genes\" --dir $tmp_dir --hexcode \"$unique_id\" 2>&1", $output,0);
+
+
+### Monitor the error log when running the analysis using the webpage
+tail -f /var/log/apache2/error_log
+
+
+### Run the analysis using the command from error_log
+
+cd /Library/WebServer/Documents/PIXdb/pages/scripts
+
+Rscript LiveGeneExpression.R --exp_file /Library/WebServer/Documents/PIXdb/pixdb_backoffice/data/E-MEXP-1243_18596959/norm_files/1243_1.processed.genename.csv --target /Library/WebServer/Documents/PIXdb/pixdb_backoffice/data/E-MEXP-1243_18596959/target.txt --colouring "Target" --gene "SAMD11" --dir /Library/WebServer/Documents/PIXdb/PIXdb/pixdb_backoffice/tmp --hexcode "mvez8d"
+
+### Investigate what is the problem from here

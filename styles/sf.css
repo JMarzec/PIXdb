@@ -1,0 +1,129 @@
+/* CSS Stylesheet for the Tissue Finder 2.0 *
+ * Coder: Stefano Pirro'
+ * Institution: Barts Cancer Institute
+ * Details: all the styling instructions of the SF2.0 portal, are included here.
+ *          Elements are grouped according to their type (buttons, h1, h2, images etc.) */
+
+
+/* Background Image
+ * We make it full screen */
+html {
+  /*background: url(../images/bg.jpg) no-repeat center center fixed;*/
+  /*background-size: cover;*/
+  background-color: white;
+}
+
+/* DIVs */
+
+div#menu {
+  position: relative;
+}
+
+/* IMAGES */
+img#front_logo {
+    display: block;
+    margin: auto;
+    width: 90%;
+}
+
+img#front_logo_small {
+  width: 30%;
+  margin-left: 30px;
+}
+
+/* Text Elements */
+h1 {
+  font-family: "Helvetica Neue";
+  color: #4a4949;
+  font-size: 30px;
+}
+
+/* TABLES */
+table#s0_org {
+  position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
+}
+
+table#s1_org {
+  table-layout: fixed;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 100px;
+  z-index: 1000000000;
+}
+
+table#s1_org td {
+  line-height: 18px;
+  padding: 8px;
+  text-align: center;
+  vertical-align: top;
+}
+
+/* BUTTONS */
+button#start {
+  position: relative;
+  margin: auto;
+  display: block;
+  vertical-align: top;
+  width: 20%;
+  height: 60px;
+  padding: 0;
+  font-size: 22px;
+  font-family: "Helvetica Neue";
+  color: #4a4949;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #ffed00;
+  border: 0;
+  border-bottom: 2px solid #e2b607;
+  cursor: pointer;
+  box-shadow: inset 0 -2px #e2b607;
+}
+
+button#start:active {
+  top: 1px;
+  outline: none;
+  box-shadow: none;
+}
+
+table#s1_org td .menu_sel {
+  border-radius: 10%;
+  border: 1px solid rgba(86,119,170,0);
+  padding: 20px;
+  background-color: rgba(255,255,255,0);
+  opacity: 0.9;
+}
+
+table#s1_org td .menu_sel:hover {
+  opacity: 1;
+}
+
+/* HORIZONTAL MENU */
+table#menu_cont {
+  width: 100%;
+}
+
+table#menu_cont tr td a {
+  font-size: 22px;
+  font-family: "Helvetica Neue";
+  color: #4a4949;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 -2px #e2b607;
+}
+
+.menu_icon {
+  display: block;
+  height: 40%;
+  padding: 10px;
+  float: right;
+  margin-left: 10px;
+}
+
+.menu_icon:hover {
+  background-color: rgba(119,155,203,0.6);
+}
+
+/********************/

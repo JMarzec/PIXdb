@@ -1,0 +1,190 @@
+mysql -u root -pBiotech8886
+
+############################################################
+#
+#	Live version
+#
+############################################################
+
+CREATE DATABASE pixdb;
+
+use pixdb
+
+############################################################
+#	Datasets table
+############################################################
+
+CREATE TABLE Datasets (ID INT(11) AUTO_INCREMENT PRIMARY KEY, Platform VARCHAR(20) NOT NULL, DatasetID VARCHAR(20) NOT NULL UNIQUE, PMID VARCHAR(20) UNIQUE  NOT NULL, Title TEXT, Authors TEXT, Journal TEXT, Abstract TEXT, PubDate DATE, Ranking INT(11), Analysis VARCHAR(1000));
+
+CREATE TABLE Datasets_Keywords (DatasetID VARCHAR(20) NOT NULL PRIMARY KEY, KW INT(11) NOT NULL);
+
+
+USE pixdb;
+
+SHOW TABLES;
+
+DESCRIBE Datasets;
+
+SELECT * FROM Datasets limit 5;
+
+SELECT * FROM Datasets WHERE pmid=18596959;
+
+SELECT PMID FROM Datasets;
+
+SELECT COUNT(*) FROM Datasets;
+
+
+############################################################
+#	Platforms table
+############################################################
+
+
+CREATE TABLE Platforms (Platform VARCHAR(20) NOT NULL, Name VARCHAR(200) NOT NULL, Total_probes VARCHAR(20), Reliable_probes VARCHAR(20), Reliable_probes_percentage VARCHAR(20), Genes_no INT(11), Datasets VARCHAR(1000) NOT NULL);
+
+
+CREATE TABLE Platforms_Keywords (PlatformID VARCHAR(20) NOT NULL PRIMARY KEY, KW INT(11) NOT NULL);
+
+
+
+CREATE TABLE Keywords (ID INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY, Keyword text NOT NULL, Occurrences INT(11) NOT NULL, Global_Occurrences BIGINT(20) NOT NULL, Level INT(11) NOT NULL, Rank INT(11) NOT NULL);
+
+
+
+USE pixdb;
+
+SHOW TABLES;
+
+DESCRIBE Platforms;
+
+SELECT * FROM Platforms limit 5;
+
+SELECT * FROM Platforms WHERE Platform="Affy_U133Plus2";
+
+SELECT Platform FROM Platforms;
+
+SELECT COUNT(*) FROM Platforms;
+
+DESCRIBE Keywords;
+
+
+quit;
+
+
+############################################################
+#	Cross_platforms table
+############################################################
+
+
+CREATE TABLE Cross_platforms (ensembl_id VARCHAR(20) NOT NULL, hgnc_symbol VARCHAR(200), description VARCHAR(500), chromosome_name VARCHAR(50), band VARCHAR(20), strand VARCHAR(2), start_position VARCHAR(10), end_position VARCHAR(10), rank_TvsN VARCHAR(10), average_log2fc_TvsN VARCHAR(10), combined_p_TvsN VARCHAR(10), rank_HvsN VARCHAR(10), average_log2fc_HvsN VARCHAR(10), combined_p_HvsN VARCHAR(10), rank_TvsH VARCHAR(10), average_log2fc_TvsH VARCHAR(10), combined_p_TvsH VARCHAR(10), rank_TmvsT VARCHAR(10), average_log2fc_TmvsT VARCHAR(10), combined_p_TmvsT VARCHAR(10), rank_MvsT VARCHAR(10), average_log2fc_MvsT VARCHAR(10), combined_p_MvsT VARCHAR(10));
+
+
+USE pixdb;
+
+SHOW TABLES;
+
+DESCRIBE Cross_platforms;
+
+SELECT * FROM Cross_platforms limit 5;
+
+SELECT * FROM Cross_platforms WHERE hgnc_symbol="PTEN";
+
+SELECT hgnc_symbol FROM Cross_platforms;
+
+SELECT COUNT(*) FROM Cross_platforms;
+
+
+quit;
+
+
+
+############################################################
+#
+#	Test version
+#
+############################################################
+
+CREATE DATABASE pixdb_test;
+
+use pixdb_test
+
+############################################################
+#	Datasets table
+############################################################
+
+CREATE TABLE Datasets (ID INT(11) AUTO_INCREMENT PRIMARY KEY, Platform VARCHAR(20) NOT NULL, DatasetID VARCHAR(20) NOT NULL UNIQUE, PMID VARCHAR(20) UNIQUE  NOT NULL, Title TEXT, Authors TEXT, Journal TEXT, Abstract TEXT, PubDate DATE, Ranking INT(11), Analysis VARCHAR(1000));
+
+CREATE TABLE Datasets_Keywords (DatasetID VARCHAR(20) NOT NULL PRIMARY KEY, KW INT(11) NOT NULL);
+
+
+USE pixdb_test;
+
+SHOW TABLES;
+
+DESCRIBE Datasets;
+
+SELECT * FROM Datasets limit 5;
+
+SELECT * FROM Datasets WHERE pmid=18596959;
+
+SELECT PMID FROM Datasets;
+
+SELECT COUNT(*) FROM Datasets;
+
+
+############################################################
+#	Platforms table
+############################################################
+
+
+CREATE TABLE Platforms (Platform VARCHAR(20) NOT NULL, Name VARCHAR(200) NOT NULL, Total_probes VARCHAR(20), Reliable_probes VARCHAR(20), Reliable_probes_percentage VARCHAR(20), Genes_no INT(11), Datasets VARCHAR(1000) NOT NULL);
+
+
+CREATE TABLE Platforms_Keywords (PlatformID VARCHAR(20) NOT NULL PRIMARY KEY, KW INT(11) NOT NULL);
+
+
+CREATE TABLE Keywords (ID INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY, Keyword text NOT NULL, Occurrences INT(11) NOT NULL, Global_Occurrences BIGINT(20) NOT NULL, Level INT(11) NOT NULL, Rank INT(11) NOT NULL);
+
+
+
+USE pixdb_test;
+
+SHOW TABLES;
+
+DESCRIBE Platforms;
+
+SELECT * FROM Platforms limit 5;
+
+SELECT * FROM Platforms WHERE Platform="Affy_U133Plus2";
+
+SELECT Platform FROM Platforms;
+
+SELECT COUNT(*) FROM Platforms;
+
+DESCRIBE Keywords;
+
+
+
+############################################################
+#	Cross_platforms table
+############################################################
+
+
+CREATE TABLE Cross_platforms (ensembl_id VARCHAR(20) NOT NULL, hgnc_symbol VARCHAR(200), description VARCHAR(500), chromosome_name VARCHAR(50), band VARCHAR(20), strand VARCHAR(2), start_position VARCHAR(10), end_position VARCHAR(10), rank_TvsN VARCHAR(10), average_log2fc_TvsN VARCHAR(10), combined_p_TvsN VARCHAR(10), rank_HvsN VARCHAR(10), average_log2fc_HvsN VARCHAR(10), combined_p_HvsN VARCHAR(10), rank_TvsH VARCHAR(10), average_log2fc_TvsH VARCHAR(10), combined_p_TvsH VARCHAR(10), rank_TmvsT VARCHAR(10), average_log2fc_TmvsT VARCHAR(10), combined_p_TmvsT VARCHAR(10), rank_MvsT VARCHAR(10), average_log2fc_MvsT VARCHAR(10), combined_p_MvsT VARCHAR(10));
+
+
+USE pixdb_test;
+
+SHOW TABLES;
+
+DESCRIBE Cross_platforms;
+
+SELECT * FROM Cross_platforms limit 5;
+
+SELECT * FROM Cross_platforms WHERE hgnc_symbol="PTEN";
+
+SELECT hgnc_symbol FROM Cross_platforms;
+
+SELECT COUNT(*) FROM Cross_platforms;
+
+
+quit;

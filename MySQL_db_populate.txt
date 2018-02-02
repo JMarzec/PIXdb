@@ -1,0 +1,69 @@
+mysql -u root -p Biotech8886
+
+USE pixdb;
+
+
+############################################################
+#
+#	Datasets table
+#
+############################################################
+
+### Add study TCGA
+
+INSERT INTO Datasets ( ID, Platform, DatasetID, PMID, Title, Authors, Journal, Abstract, PubDate, Ranking, Analysis ) VALUES ( 2, "RNA_seq", "TCGA", "26544944", "The Molecular Taxonomy of Primary Prostate Cancer.", "Cancer Genome Atlas Research Network.", "Cell", "There is substantial heterogeneity among primary prostate cancers, evident in the spectrum of molecular abnormalities and its variable clinical course. As part of The Cancer Genome Atlas (TCGA), we present a comprehensive molecular analysis of 333 primary prostate carcinomas. Our results revealed a molecular taxonomy in which 74% of these tumors fell into one of seven subtypes defined by specific gene fusions (ERG, ETV1/4, and FLI1) or mutations (SPOP, FOXA1, and IDH1). Epigenetic profiles showed substantial heterogeneity, including an IDH1 mutant subset with a methylator phenotype. Androgen receptor (AR) activity varied widely and in a subtype-specific manner, with SPOP and FOXA1 mutant tumors having the highest levels of AR-induced transcripts. 25% of the prostate cancers had a presumed actionable lesion in the PI3K or MAPK signaling pathways, and DNA repair genes were inactivated in 19%. Our analysis reveals molecular heterogeneity among primary prostate cancers, as well as potentially actionable molecular defects.", "2015-11-05", 0, "PCA,Tumour purity,Expression heatmap,Expression profiles,Expression correlations,Survival analysis,Gene networks" );
+
+
+SELECT * FROM Datasets WHERE pmid=26544944;
+
+### Do the same for the remaining datasets
+
+
+############################################################
+#
+#	Platforms table
+#
+############################################################
+
+### Add platform RNA_seq
+
+INSERT INTO Platforms ( Platform, Name, Total_probes, Reliable_probes, Reliable_probes_percentage, Genes_no, Datasets ) VALUES ( "RNA_seq", "Illumina HiSeq 2000 / Genome Analyzer II", "-", "-", "-", 52849, "TCGA , ICGC" );
+
+
+### Add platform Affy_HuEx1ST
+
+INSERT INTO Platforms ( Platform, Name, Total_probes, Reliable_probes, Reliable_probes_percentage, Genes_no, Datasets ) VALUES ( "Affy_HuEx1ST", "Affymetrix Human Exon 1.0 ST", "1409213", "928184", "66", 34030, "GSE21034 , GSE29079 , GSE30521 , GSE41408" );
+
+
+### Add platform Affy_U133Plus2
+
+INSERT INTO Platforms ( Platform, Name, Total_probes, Reliable_probes, Reliable_probes_percentage, Genes_no, Datasets ) VALUES ( "Affy_U133Plus2", "Affymetrix Human Genome U133 Plus 2.0", "54253", "37064", "68", 15917, "E-MEXP-1243 , GSE17951 , GSE3325 , GSE45016 , GSE55945" );
+
+
+### Add platform Affy_U133A
+
+INSERT INTO Platforms ( Platform, Name, Total_probes, Reliable_probes, Reliable_probes_percentage, Genes_no, Datasets ) VALUES ( "Affy_U133A", "Affymetrix Human Genome U133A", "22086", "15318", "69", 8938, "E-TABM-26 , GSE32269 , GSE8218" );
+
+
+### Add platform Affy_U95Av2
+
+INSERT INTO Platforms ( Platform, Name, Total_probes, Reliable_probes, Reliable_probes_percentage, Genes_no, Datasets ) VALUES ( "Affy_U95Av2", "Affymetrix Human Genome U95Av2", "12486", "8191", "66", 5781, "BI-GDAC , GSE1431 , GSE6919" );
+
+
+### Add platform Affy_U95B
+#
+#INSERT INTO Platforms ( Platform, Name, Total_probes, Reliable_probes, Reliable_probes_percentage, Genes_no, Datasets ) VALUES ( "Affy_U95B", "Affymetrix Human Genome U95B", "12528", "8526", "68", 5819, "GSE6919" );
+#
+
+### Add platform Affy_U95C
+#
+#INSERT INTO Platforms ( Platform, Name, Total_probes, Reliable_probes, Reliable_probes_percentage, Genes_no, Datasets ) VALUES ( "Affy_U95C", "Affymetrix Human Genome U95C", "12457", "7741", "62", 5300, "GSE6919" );
+#
+
+### Add platform Illum_HT_12v3
+#
+#INSERT INTO Platforms ( Platform, Name, Total_probes, Reliable_probes, Reliable_probes_percentage, Genes_no, Datasets ) VALUES ( "Illum_HT_12v3", "Illumina HumanHT-12 v3.0", "43405", "26556", "61", 17421, "GSE32571" );
+#
+
+SELECT * FROM Platforms;
+

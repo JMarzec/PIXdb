@@ -1,0 +1,551 @@
+/* CSS Stylesheet for the Tissue Finder 2.0 *
+ * Coder: Stefano Pirro'
+ * Institution: Barts Cancer Institute
+ * Details: all the styling instructions of the BoB portal, are included here.
+ *          Elements are grouped according to their type (buttons, h1, h2, images etc.) */
+
+
+/* Background Image
+ * We make it full screen */
+html {
+  /*background: url(../images/bg.jpg) no-repeat center center fixed;
+  background-size: cover;*/
+  background-color: white;
+}
+
+/* DIVs */
+
+div#menu {
+  position: relative;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+div#papers_filter {
+  visibility: hidden;
+}*/
+
+div#source.container {
+  /*width: 1000px;*/
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  /*box-shadow: 0px 0px 30px 10px #777;*/
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div#main.container {
+  margin-top: 20px;
+}
+
+div#left.doc {
+  width:300px;
+}
+
+div#right.doc {
+  width:500px;
+}
+
+div#papers_wrapper {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+div#filter {
+  width: 100%;
+}
+
+div#literature.container {
+  width: 950px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(92,99,112,0.2);
+}
+
+div.section {
+  width: 950px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.doc {
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.network_container {
+  display: none;
+  padding-top: 20px;
+}
+
+/* SPAN FOR THE YADCF TABLE
+
+NUMBERS ON THE NUMERIC RANGE SLIDER */
+span.yadcf-filter-range-number-slider-min-tip-hidden {
+  visibility: hidden;
+}
+
+span.yadcf-filter-range-number-slider-max-tip-hidden {
+  visibility: hidden;
+}
+
+button.range-number-slider-reset-button {
+  visibility: hidden;
+}
+
+/* PICTURES */
+img#front_logo_small {
+  width: 25%;
+  margin-left: 30px;
+}
+
+img.doc {
+  width: 800px;
+}
+
+/* Text Elements */
+h1 {
+  font-family: "Helvetica Neue";
+  color: #4a4949;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+h3 {
+  font-family: "Helvetica Neue";
+  color: #4a4949;
+  font-size: 17px;
+}
+
+h4 {
+  font-family: "Helvetica Neue";
+  color: #4a4949;
+  font-size: 15px;
+  font-weight: bold;
+  display: inline;
+  margin-bottom: 10px;
+  vertical-align: middle;
+}
+
+p {
+  font-family: "Helvetica Neue";
+  color: #4a4949;
+  font-size: 17px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 30px;
+  text-align: center;
+}
+
+p.filter_desc {
+  color: #4a4949;
+  font-size: 12px;
+  padding: 5px;
+  display: inline;
+  margin: 5;
+}
+
+p.pub_det {
+  color: #4a4949;
+  font-size: 14px;
+  margin-left: 10px;
+  display: inline;
+  text-align: justify;
+}
+
+p.doc {
+  color: #4a4949;
+  font-size: 13px;
+  text-align: justify;
+  line-height: 20px;
+}
+
+textarea#abstract {
+  color: #4a4949;
+  font-size: 13px;
+  margin-left: 10px;
+  resize: none;
+  border: none;
+  background-color: rgba(92,99,112,0);
+}
+
+textarea#authors {
+  color: #4a4949;
+  font-size: 13px;
+  margin-left: 10px;
+  resize: none;
+  border: none;
+  background-color: rgba(92,99,112,0);
+}
+
+a.papers_link {
+  appearance: button;
+  text-decoration: none;
+  color: initial;
+}
+
+span#right.menu a {
+    font-size: 12px;
+    background-color: #fff;
+    color: #4A4949;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: right;
+    padding: 3px 20px 5px 20px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+span#right.menu a:hover {
+    text-decoration: underline;
+    color: rgba(252, 146, 164, 0.8);
+}
+
+input#min_thr_label {
+  width: 20px;
+  border: none;
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  color: "grey";
+  transform: rotate(-45deg);
+  margin-top: 10px;
+  float: left;
+}
+
+input#max_thr_label {
+  width: 20px;
+  border: none;
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  color: "grey";
+  transform: rotate(-45deg);
+  margin-top: 10px;
+  float: right;
+}
+
+/* SPAN */
+span#right.menu {
+  float: right;
+  padding: 3px 20px 5px 20px;
+  margin: 0;
+}
+
+span.pubmed_det {
+  margin-right: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  border-color: rgba(149,158,175, 1);
+  background-color: rgba(149,158,175, 0.2);
+  padding-left: 5px;
+  padding-right: 5px;
+  line-height: 20px;
+}
+
+/* TABLES */
+table#main_container {
+  table-layout: fixed;
+  width: 100%;
+  vertical-align: top;
+}
+
+table#main_container td#left {
+  width: 30%;
+  vertical-align: top;
+}
+
+table#sel_container {
+  table-layout: fixed;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table#sel_container tr {
+  text-align: center;
+}
+
+table#papers {
+  table-layout: fixed;
+}
+
+table#papers td, th, .dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate, .paging_simple_numbers {
+  font-family: "Helvetica Neue";
+  color: #4a4949;
+  font-size: 13px;
+  padding: 5px 5px 5px 5px;
+}
+
+table#platforms td, th, .dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate, .paging_simple_numbers {
+  font-family: "Helvetica Neue";
+  color: #4a4949;
+  font-size: 13px;
+  padding: 5px 5px 5px 5px;
+}
+
+table#crossplatform td, th, .dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate, .paging_simple_numbers {
+  font-family: "Helvetica Neue";
+  color: #4a4949;
+  font-size: 13px;
+  padding: 5px 5px 5px 5px;
+}
+
+table#network_parameters_container {
+  table-layout: fixed;
+  width: 800px;
+}
+
+/* HORIZONTAL MENU */
+table#menu_cont {
+  width: 100%;
+}
+
+table#menu_cont tr td a {
+  font-size: 15px;
+  font-family: "Helvetica Neue";
+  color: #4a4949;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  /*text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 -2px #e2b607;
+  font-style: normal;*/
+}
+
+table#menu_cont tr td a:hover {
+  background-color: rgba(92,99,112,1);
+  color: rgba(255,255,255,1);
+}
+
+.menu_icon {
+  display: block;
+  height: 40%;
+  padding: 10px;
+  float: right;
+  margin-left: 10px;
+}
+
+.menu_icon:hover {
+  background-color: rgba(92,99,112,0.6);
+}
+
+/********************/
+
+/* iFRAMES (plotly results) */
+iframe.home_stats {
+  width: 600px;
+  height: 400px;
+  border: 0;
+  display: block;
+  margin-left: -100px;
+  margin-right: -100px;
+  margin-top: -50px;
+  overflow: hidden;
+  margin-bottom: -50px;
+  padding: -100px;
+
+  -ms-zoom: 0.75;
+  -moz-transform: scale(0.75);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.75);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.70);
+  -webkit-transform-origin: -100 -100;
+}
+
+iframe.results {
+  width: 900px;
+  height: 700px;
+  border: 0;
+  display: block;
+  margin-left: "auto";
+  margin-right: "auto";
+  margin-bottom: -50px;
+  overflow: hidden;
+
+  -moz-transform: scale(0.90, 0.90);
+  -webkit-transform: scale(0.90, 0.90);
+  -o-transform: scale(0.90, 0.90);
+  -ms-transform: scale(0.90, 0.90);
+  transform: scale(0.90, 0.90);
+  -moz-transform-origin: top center;
+  -webkit-transform-origin: top center;
+  -o-transform-origin: top center;
+  -ms-transform-origin: top center;
+  transform-origin: top center;
+}
+
+iframe#estimate.results {
+  width: 900px;
+  height: 500px;
+  border: 0;
+  display: block;
+  margin-left: "auto";
+  margin-right: "auto";
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+/* Filter Section */
+.ui-accordion .ui-accordion-content {
+  width: 97%;
+  padding: 10px;
+}
+
+table.ui-accordion td {
+  position: relative;
+  overflow: hidden;
+  height: 2em;
+}
+
+/* Literature filtering div */
+div#yadcf-filter-wrapper--papers-1 {
+  width: 100%;
+  padding: 0;
+  margin-top: -10;
+}
+
+div#kw_filter {
+  height: 100%;
+}
+
+div#kw_filter button {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  font-size: 10px;
+  font-family: "Helvetica Neue";
+  line-height: 1.5;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+div#kw_filter input {
+  width: 70%;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+/* Publication date filtering div */
+div#pubdate_filter {
+  height: 100%;
+}
+
+div#pubdate_filter button {
+  display: inline;
+  margin: 0 0 0 0;
+  font-size: 10px;
+  font-family: "Helvetica Neue";
+  line-height: 1.5;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  position: absolute;
+  top: 68%;
+  left: 360px;
+  visibility: hidden;
+}
+
+div#pubdate_filter input {
+  width: 35%;
+  font-size: 12px;
+  margin-right: 3px;
+}
+
+/* Available analyses filtering div */
+div#bioinfo_filter {
+  width: 100%;
+}
+
+div#bioinfo_filter span {
+  width: 100%;
+}
+
+div#bioinfo_filter button {
+  display: inline-block;
+  margin: 0 0 0 0;
+  font-size: 10px;
+  font-family: "Helvetica Neue";
+  line-height: 1.5;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  position: absolute;
+  top: 75%;
+  left: 350px;
+  visibility: hidden;
+}
+
+div#bioinfo_filter input {
+  width: 60%;
+  font-size: 12px;
+  margin-right: 3px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  display: inline;
+}
+
+.select2-selection__choice {
+  font-size: 12px;
+  font-family: "Helvetica Neue";
+}
+
+.select2-container--default .select2-results__option {
+  font-size: 12px;
+  font-family: "Helvetica Neue";
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+  background: rgba(92,99,112,0.5);
+  border: 1px solid rgba(92,99,112,0.5);
+  color: black;
+}
+
+.ui-tabs .ui-tabs-panel {
+  padding-bottom: 100px;
+}
+
+/* BUTTONS */
+button#run {
+  margin: auto;
+  display: block;
+  margin-top: 30px;
+  background-color: rgba(177,184,198,0.6);
+}
+
+button.run {
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  background-color: rgba(177,184,198,0.6);
+  border: none;
+  border-bottom: 2px solid rgba(92,99,112,1);
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+u.note {
+  font-family: "Helvetica Neue";
+  color: grey;
+  font-size: 13px;
+  margin-top: 5px;
+}

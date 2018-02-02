@@ -1,0 +1,14 @@
+./FilesOverlap.pl -f1 /Library/WebServer/Documents/PIXdb_test/pixdb_backoffice/data/E-MEXP-1243_18596959/norm_files/Comb_E-MEXP-1243.txt -f2 /Users/marzec01/Desktop/genome_annotation/ensembl_Homo_sapiens.GRCh38.83.gtf.gene_info.txt -c 1 -o /Library/WebServer/Documents/PIXdb_test/pixdb_backoffice/data/E-MEXP-1243_18596959/norm_files/1243_1.processed.genename.txt
+
+
+R --file=./GenesHeatmap.R --args "/Library/WebServer/Documents/PIXdb_test/pixdb_backoffice/data/E-MEXP-1243_18596959/norm_files/1243_1.processed.genename.csv" "/Library/WebServer/Documents/PIXdb_test/pixdb_backoffice/data/E-MEXP-1243_18596959/target_for_heatmap.txt" "/Library/WebServer/Documents/PIXdb_test/pixdb_backoffice/data/E-MEXP-1243_18596959"
+
+
+Rscript bcntb.pca.R --exp_file 1243_1.processed.genename.csv --target /Library/WebServer/Documents/PIXdb_test/pixdb_backoffice/data/E-MEXP-1243_18596959/target.txt --colouring Target --principal_component 1 --dir /Library/WebServer/Documents/PIXdb_test/pixdb_backoffice/data/E-MEXP-1243_18596959
+
+
+Rscript bcntb.estimate.R --exp_file 1243_1.processed.genename.csv --target /Library/WebServer/Documents/PIXdb_test/pixdb_backoffice/data/E-MEXP-1243_18596959/target_for_estimate.txt  --target2 /Library/WebServer/Documents/PIXdb_test/pixdb_backoffice/data/E-MEXP-1243_18596959/target.txt --dir /Library/WebServer/Documents/PIXdb_test/pixdb_backoffice/data/E-MEXP-1243_18596959
+
+
+Rscript bcntb.plotly.estimate.R --report /Library/WebServer/Documents/PIXdb_test/pixdb_backoffice/data/E-MEXP-1243_18596959/estimate.report --dir /Library/WebServer/Documents/PIXdb_test/pixdb_backoffice/data/E-MEXP-1243_18596959
+

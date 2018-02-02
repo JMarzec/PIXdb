@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="305px" height="173px" viewBox="0 0 305 173" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(1.000000, 1.000000)">
+            <circle id="Oval" stroke="#FF0000" fill="#FF0000" cx="15" cy="15" r="15"></circle>
+            <circle id="Oval" stroke="#0600FF" fill="#1B00FF" cx="15" cy="62" r="15"></circle>
+            <circle id="Oval" stroke="#E5FF00" fill="#F9FF00" cx="15" cy="109" r="15"></circle>
+            <circle id="Oval" stroke="#AEAEAE" fill="#B6B6B6" cx="15" cy="156" r="15"></circle>
+            <text id="Up-regulation-(z-sco" font-family="HelveticaNeue, Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                <tspan x="42" y="26">Up regulation (z-score &gt; 0)</tspan>
+            </text>
+            <text id="Down-regulation-(z-s" font-family="HelveticaNeue, Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                <tspan x="42" y="73">Down regulation (z-score &lt; 0)</tspan>
+            </text>
+            <text id="Node-queried-by-the" font-family="HelveticaNeue, Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                <tspan x="42" y="120">Node queried by the user</tspan>
+            </text>
+            <text id="Expression-data-not" font-family="HelveticaNeue, Helvetica Neue" font-size="20" font-weight="normal" fill="#000000">
+                <tspan x="42" y="167">Expression data not available</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

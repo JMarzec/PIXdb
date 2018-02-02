@@ -1,0 +1,43 @@
+{
+ "name": "Home", "real_number": "",
+   "children": [
+    {
+     "name": "Normal", "real_number":83,
+     "children": [
+        {"name": "Array", "size": 83, "real_number": 83}
+       ]
+    },
+    {
+     "name": "Normal (adj)", "real_number":389,
+     "children": [
+       {"name": "Array", "size": 351, "real_number": 351},
+       {"name": "RNA-seq", "size": 38, "real_number": 38}
+       ]
+    },
+    {
+     "name": "HGPIN", "real_number":35,
+     "children": [
+       {"name": "Array", "size": 35, "real_number": 35}
+       ]
+    },
+    {
+     "name": "Tumour", "real_number":880,
+     "children": [
+       {"name": "Array", "size": 417, "real_number": 417},
+       {"name": "RNA-seq", "size": 463, "real_number": 463}
+       ]
+    },
+    {
+     "name": "Tumour (met)", "real_number":31,
+     "children": [
+       {"name": "Array", "size": 31, "real_number": 31}
+       ]
+    },
+    {
+     "name": "Metastasis", "real_number":72,
+     "children": [
+       {"name": "Array", "size": 72, "real_number": 72}
+       ]
+    }
+  ]
+}
