@@ -19,6 +19,8 @@ SP1		RNA-seq	Down
 SPINK1
 - TCGA (mentioned in the paper)
 
+ETV1
+- TCGA (mentioned in the paper)
 
 PID1
 - Affy HuEx1ST
