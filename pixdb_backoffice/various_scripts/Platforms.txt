@@ -1,4 +1,3 @@
-
 Platform	Platform_full_name	Total_probes	Reliable_probes	Reliable_probes_percentage	Genes_no	Datasets
 RNAseq	Illumina HiSeq 2000 / Illumina Genome Analyzer II	NA	NA	NA	52849	TCGA,ICGC
 Affy_HuEx1ST	Affymetrix Human Exon 1.0 ST	1409213	928184	66	34030	GSE21034,GSE29079,GSE30521,GSE41408
