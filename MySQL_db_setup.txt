@@ -1,4 +1,4 @@
-mysql -u root -pBiotech8886
+mysql -u root -pJacol.m1
 
 ############################################################
 #
@@ -36,7 +36,8 @@ SELECT COUNT(*) FROM Datasets;
 
 ############################################################
 #	Platforms table
-############################################################	
+############################################################
+
 
 CREATE TABLE Platforms (Platform VARCHAR(20) NOT NULL, Name VARCHAR(200) NOT NULL, Total_probes VARCHAR(20), Reliable_probes VARCHAR(20), Reliable_probes_percentage VARCHAR(20), Genes_no INT(11), Datasets VARCHAR(1000) NOT NULL);
 

@@ -27,6 +27,11 @@ cd /Library/WebServer/Documents/PIXdb/pixdb_backoffice/scripts
 
 python upload_completed_analysis.py  --report analyses.report
 
+
+### Export database to .sql file
 mysqldump -u root -p  pixdb > pixdb.sql
 
+
+### Import database from .sql file
+mysql -u root -p pixdb < pixdb.sql
 

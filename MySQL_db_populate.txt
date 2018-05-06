@@ -1,4 +1,4 @@
-mysql -u root -p Biotech8886
+mysql -u root -pJacol.m1
 
 USE pixdb;
 
