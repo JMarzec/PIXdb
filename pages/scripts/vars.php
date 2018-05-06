@@ -8,7 +8,7 @@
 // connection vars to mySQL database for PIXdb
 $bob_mysql_address='127.0.0.1';
 $bob_mysql_username='root';
-$bob_mysql_password='Biotech8886'; // in next release, the password will be encrypted
+$bob_mysql_password='Jacol.m1'; // in next release, the password will be encrypted
 $bob_mysql_database='pixdb';
 
 // tables
