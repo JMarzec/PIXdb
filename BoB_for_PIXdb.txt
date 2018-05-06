@@ -17,7 +17,7 @@ vi /etc/apache2/httpd.conf
 
 ### If encountering problems see if there is anything wrong in its config file by running apachectl configtest. If the error is "AH00526: Syntax error on line 20 of /private/etc/apache2/extra/httpd-mpm.conf…" then go to
 
-/etc/apache2/extra
+cd /etc/apache2/extra
 
 # and restored the httpd-mpm.conf file
 
@@ -27,21 +27,81 @@ sudo mv httpd-mpm.conf~orig httpd-mpm.conf
 
 ### Setting directory permissions
 
+
+############################## OSX 10.10 ##############################
 ### If there is any problem with accessing folders check this website (follow instructions for For OSX 10.10 Apache 2.4) https://coolestguidesontheplanet.com/forbidden-403-you-dont-have-permission-to-access-username-on-this-server/
 
 ### Must be root
+
+mkdir /Users/marzec01/Sites/
 
 cd /etc/apache2/users
 
 vi marzec01.conf
 
-<Directory "/Users/username/Sites/">
-AllowOverride All
-Options Indexes MultiViews FollowSymLinks
-Require all granted
+<Directory "/Users/marzec01/Sites/">
+	AllowOverride All
+	Options Indexes MultiViews FollowSymLinks
+	Require all granted
 </Directory>
+
 
 ### Restart the server
 
 sudo apachectl restart
 
+##########################################################################
+
+
+############################## OSX 10.13 (High Sierra) ##############################
+### If there is any problem with accessing folders check this website (follow instructions for For OSX 10.13 and Apache 2.4) https://websitebeaver.com/set-up-localhost-on-macos-high-sierra-apache-mysql-and-php-7-with-sslhttps and https://coolestguidesontheplanet.com/forbidden-403-you-dont-have-permission-to-access-username-on-this-server/
+
+### Checking the Apache2 version
+
+/usr/sbin/httpd -v
+
+
+### Must be root
+
+### edit the /etc/apache2/httpd.conf and remove "#" from "#LoadModule php7_module libexec/apache2/libphp7.s"
+
+
+mkdir /Users/marzec01/Sites/
+
+cd /etc/apache2/users
+
+vi marzec01.conf
+
+<Directory "/Users/marzec01/Sites/">
+    Options Indexes MultiViews
+    AllowOverride None
+    Order allow,deny
+    Require all granted
+</Directory>
+
+
+### Restart the server
+
+sudo apachectl restart
+
+##########################################################################
+
+
+### One may also need to change the privileges for some folders to be accessible to everyone
+
+chown marzec01:everyone data/
+
+chown marzec01:everyone tmp/
+
+
+### It may be also necessary to change the /etc/apache2/httpd.conf to include "Require all granted" instead of "Require all denied"
+
+<Directory />
+    AllowOverride none
+    #Require all denied
+    Require all granted
+</Directory>
+
+### Restart the server
+
+sudo apachectl restart
