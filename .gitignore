@@ -2,6 +2,7 @@
 .DS_Store
 pixdb_backoffice/data/*
 pixdb_backoffice/tmp/*
+pixdb_backoffice/various_scripts/*.txt
 pixdb_backoffice/various_scripts/Meta_genes_TumourvsNormal_DEbound.txt
 pixdb_backoffice/various_scripts/Meta_genes_TumourvsNormal_HGPINvsNormal_DEbound.txt
 pixdb_backoffice/various_scripts/Meta_genes_TumourvsNormal_HGPINvsNormal_TumourvsHGPIN_DEbound.txt
@@ -29,3 +30,4 @@ pixdb_backoffice/various_scripts/Meta_MetastasisvsTumour_DEbound.txt
 pixdb_backoffice/various_scripts/Meta_Tumour_metvsTumour_DEbound.txt
 pixdb_backoffice/various_scripts/Meta_TumourvsHGPIN_DEbound.txt
 pixdb_backoffice/various_scripts/Meta_TumourvsNormal_DEbound.txt
+pixdb_backoffice/tmp/.Rhistory
