@@ -20,12 +20,6 @@ graphics.off()
 #    Functions
 #===============================================================================
 
-# DICHOTOMISE EXPRESSION DATA BASED ON MEDIAN
-local.dichotomise.dataset <- function(x, split_at = 99999) {
-  if (split_at == 99999) { split_at = median(x, na.rm = TRUE); }
-  return( as.numeric( x > split_at ) );
-}
-
 
 #===============================================================================
 #    Load libraries
@@ -58,11 +52,16 @@ gene <- opt$gene
 outFolder <- opt$dir
 hexcode <- opt$hexcode
 
+##### the patiens assignment into low and high expression groups is based on the best cutt-off value as defined in the mehtod introduced in KM Plotter web tool ( http://kmplot.com/analysis/index.php?p=service ; http://kmplot.com/analysis/studies/Supplemental%20R%20script%201.R )
+##### set lower and upper values between which to search for the bet cutt-off value
+Lower_q <- 0.25
+Upper_q <- 0.75
+
 #===============================================================================
 #    Main
 #===============================================================================
 
-# splitting exp_file string to retrieve all the identified samples
+##### splitting exp_file string to retrieve all the identified samples
 exp_files = unlist(strsplit(expFile, ","))
 
 ##### Read sample annotation file
@@ -93,17 +92,58 @@ for (j in 1:length(exp_files)) {
 
   ##### Make sure that the annotation contains info only about samples in the data matrix
   ann.data.slimmed <- annData[ annData$File_name %in% colnames(expData.subset),  ]
-
+  
+  ##### Extract expression values for selected gene
+  gene <- as.matrix(exp.data.slimmed[ gene , ])
+            
+  #===============================================================================
+  #     Selected the best performing percentile cut-off
+  #===============================================================================
+  
+  ##### Selected the best performing percentile cut-off based on method introduced in KM plotter web tool ( http://kmplot.com/analysis/studies/Supplemental%20R%20script%201.R )
+  
+  ordered_gene = order(gene);
+  q1 <- round(length(ordered_gene)*Lower_q);
+  q3 <- round(length(ordered_gene)*Upper_q);
+  
   # extract surv data
   surv.stat <- as.numeric( ann.data.slimmed[ , "surv.stat"]);
   # extract surv time
   surv.time <- as.numeric( ann.data.slimmed[ , "surv.time"]);
   # extract surv type
   surv.type <- as.character( ann.data.slimmed[ , "surv.type"])[1];
-
-
-  # gene = specified by user
-  rg <- local.dichotomise.dataset( as.matrix(exp.data.slimmed[ gene , ] ));
+  
+  surv <- Surv(surv.time, surv.stat);
+  
+  p_values <- vector(mode="numeric", length = q3-q1+1)
+  cutoffs <- seq(Lower_q,Upper_q, by=(Upper_q-Lower_q)/(q3-q1))
+  min_j <- 0
+  min_pvalue <- 1
+  
+  for (j in q1:q3) {
+      
+      gene_expr <- vector(mode="numeric", length=length(gene))
+      gene_expr[ordered_gene[j:length(ordered_gene)]] <- 1
+      
+      cox <- summary(coxph(surv ~ gene_expr))
+      
+      pvalue <- cox$sctest[3]
+      
+      p_values[j-q1+1] <- pvalue
+      
+      if (pvalue < min_pvalue) {
+          min_pvalue <- pvalue
+          min_j <- j
+      }
+  }
+  
+  ##### Use selected cut-off devide samples into low and high-expression groups
+  rg <- rep("_Low_expression", length=length(gene))
+  rg[ordered_gene[min_j:length(ordered_gene)]] <- "_High_expression"
+  rg <- factor(rg, levels = c("_Low_expression", "_High_expression"))
+  
+  
+  ##### Cox's regression for survival data (univariate analysis)
   cox.fit <- summary( coxph( Surv(surv.time, surv.stat) ~ rg) );
   cox.km <- survfit(coxph(Surv(surv.time, surv.stat) ~ strata(rg)));
 
@@ -136,6 +176,22 @@ for (j in 1:length(exp_files)) {
   text( risk.dataLow[2,], rep(-0.05, length(risk.dataLow[2,])), col="darkblue", labels=as.numeric(risk.dataLow[3,]))
   text( risk.dataHigh[2,], rep(-0.1, length(risk.dataHigh[2,])), col="red", labels=as.numeric(risk.dataHigh[3,]))
   dev.off()
+
+
+  png(filename=paste0(hexcode,"_KMplot.png"), width = 680, height = 680, units = "px", pointsize = 18)
+  plot(cox.km, mark.time=TRUE, col=c("darkblue", "red"), xlab="Survival time", ylab="Survival probability", lty=c(1,1), lwd=2.5, ylim=c(-0.1,1.13), xlim=c(0-((max(cox.km$time)-min(cox.km$time))/10),max(cox.km$time)+((max(cox.km$time)-min(cox.km$time))/10)), xaxt="none")
+  axis(1, at=round(seq(0, max(cox.km$time), by = max(cox.km$time)/5), digits=1))
+
+  ##### Report HR value (with 95% confidence intervals) and p-values
+  legend("topright", legend=c(paste("HR=", round(cox.fit$conf.int[1,1], digits=2), sep=""), paste("95% CI (", round(cox.fit$conf.int[1,3], digits=2), "-", round(cox.fit$conf.int[1,4], digits=2), ")", sep=""), pValue), box.col="transparent", bg="transparent")
+
+  ##### Report number at risk
+  legend("topleft", legend=c("Low expression", "High expression"), col=c("darkblue", "red"), lty=c(1,1), lwd=2.5, box.col="transparent", bg="transparent")
+  legend("bottom", legend="Number at risk\n\n\n\n", box.col="transparent", bg="transparent")
+  text( risk.dataLow[2,], rep(-0.05, length(risk.dataLow[2,])), col="darkblue", labels=as.numeric(risk.dataLow[3,]))
+  text( risk.dataHigh[2,], rep(-0.1, length(risk.dataHigh[2,])), col="red", labels=as.numeric(risk.dataHigh[3,]))
+  dev.off()
+
 
 
 }
