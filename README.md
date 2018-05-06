@@ -17,7 +17,7 @@ Script | Description | Component
 ### MySQL database set up
 
 ```
-mysql -u root -pBiotech8886
+mysql -u root -p
 
 CREATE DATABASE pixdb;
 
