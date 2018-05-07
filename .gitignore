@@ -1,5 +1,5 @@
 
-.DS_Store
+*DS_Store
 pixdb_backoffice/data/*
 pixdb_backoffice/tmp/*
 pixdb_backoffice/various_scripts/*.txt
@@ -32,4 +32,4 @@ pixdb_backoffice/various_scripts/Meta_TumourvsHGPIN_DEbound.txt
 pixdb_backoffice/various_scripts/Meta_TumourvsNormal_DEbound.txt
 pixdb_backoffice/tmp/.Rhistory
 pixdb_backoffice/*Rhistory
-pixdb_backoffice/tmp/*
+
