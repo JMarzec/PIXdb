@@ -35,3 +35,4 @@ pixdb_backoffice/*Rhistory
 
 pixdb_backoffice/tmp/*.js
 
+pages/scripts/vars.php
