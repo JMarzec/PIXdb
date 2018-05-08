@@ -1,3 +1,30 @@
+############################################################
+### NOTE: for MySQL above version 8 a new authentication method is used, "caching_sha2_password", instead of "mysql_native_password". To work around it one needs to create new user with the old authentication method
+
+### https://dev.mysql.com/doc/refman/8.0/en/caching-sha2-pluggable-authentication.html#caching-sha2-pluggable-authentication-cache-operation
+
+### https://stackoverflow.com/questions/49083573/php-7-2-2-mysql-8-0-pdo-gives-authentication-method-unknown-to-the-client-ca
+CREATE USER root@localhost identified with mysql_native_password by 'Biotech20188';
+
+SHOW CREATE USER 'jmarzec'@'localhost'\G
+
+### https://serverfault.com/questions/115950/how-do-i-change-the-privileges-for-mysql-user-that-is-already-created
+
+show grants for 'jmarzec'@'localhost';
+
+revoke all privileges on *.* from 'jmarzec'@'localhost';
+
+grant SELECT,INSERT,UPDATE,DELETE,CREATE,DROP ON `pixdb`.* TO 'jmarzec'@'localhost';
+
+flush privileges;
+
+
+### Now the new user can be used to access the MySQL pixdb database via PhP
+
+############################################################
+
+
+
 mysql -u root -pJacol.m1
 
 ############################################################
