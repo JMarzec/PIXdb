@@ -33,6 +33,7 @@ pixdb_backoffice/various_scripts/Meta_TumourvsNormal_DEbound.txt
 pixdb_backoffice/tmp/.Rhistory
 pixdb_backoffice/*Rhistory
 
-pixdb_backoffice/tmp/*.js
+/Library/WebServer/Documents/PIXdb/pixdb_backoffice/tmp/*.js
 
 pages/scripts/vars.php
+
