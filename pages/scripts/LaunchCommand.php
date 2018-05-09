@@ -39,7 +39,7 @@ $results_files_string = substr($results_files_string, 0, -1);
 if ($TypeAnalysis == "gene_expression") {
   // *** Gene Expression Analyses *** //
   // launching Rscript for the analysis...
-  // error_log("$R_dir/Rscript LiveGeneExpressionOrdered.R --exp_file $results_files_string --target $target_file --colouring \"Target\" --gene \"$genes\" --dir $tmp_dir --hexcode \"$unique_id\" 2>&1", $output,0);
+  // error_log("$R_dir/Rscript LiveGeneExpressionOrdered.R --exp_file $results_files_string --target $target_file --colouring \"Target\"--order Normal,HGPIN,Tumour,Tumour_met,Metastasis --gene \"$genes\" --dir $tmp_dir --hexcode \"$unique_id\" 2>&1", $output,0);
   system("$R_dir/Rscript LiveGeneExpressionOrdered.R --exp_file $results_files_string --target $target_file --colouring \"Target\"  --order Normal,HGPIN,Tumour,Tumour_met,Metastasis --gene \"$genes\" --dir $tmp_dir --hexcode \"$unique_id\" 2>&1", $output);
 
 } elseif ($TypeAnalysis == "co_expression") {
