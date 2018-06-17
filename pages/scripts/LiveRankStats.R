@@ -96,7 +96,7 @@ geneData.df$comparison <- factor(geneData.df$comparison, levels = geneData.df[["
 
 ##### Generate bar plot with bars' colours reflecting the combined P-values in each biological comparison
 p <- plot_ly(geneData.df, x = ~comparison, y = ~base,  type = 'bar', orientation = 'horizontal',  width = 800, height = 600)  %>%
-add_trace( y = ~log2FC, marker = list( size=geneData.rank, color=geneData.rank, colorbar=list(title='Rank (%)'), colorscale='Viridis', cauto=F, cmin=0, cmax=100, reversescale = FALSE, line = list(color = 'rgba(0, 0, 0, 0.4)', width = 1)), name = "log2 FC", text = paste0("P = ", geneData.combined_p), textposition = 'outside' )  %>%
+add_trace( y = ~log2FC, marker = list( size=geneData.rank, color=geneData.rank, colorbar=list(title='Rank (%)'), colorscale='Viridis', cauto=FALSE, cmin=0, cmax=100, reversescale = FALSE, line = list(color = 'rgba(0, 0, 0, 0.4)', width = 1)), name = "log2 FC", text = paste0("P = ", geneData.combined_p), textposition = 'outside' )  %>%
 
 
 layout(
