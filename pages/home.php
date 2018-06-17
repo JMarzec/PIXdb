@@ -85,35 +85,16 @@ echo <<< EOT
 <div class="container" id="description">
   <table id="sel_container">
       <tr>
-          <i>Normal prostate</i> - tissue from healthy prostate or BPH<br>
+          <i>Normal prostate</i> - tissue from healthy prostate or benign prostate hyperplasia (BPH)<br>
           <i>Normal adjacent</i> - normal prostate tissue adjacent to tumour<br>
           <i>HGPIN</i> - high-grade prostatic intraepithelial neoplasia<br>
-          <i>Primary tumour</i> - primary tumour<br>
-          <i>Metastatic primary tumour</i> - samples from primary prostate cancer patients with metastasis<br>
+          <i>Primary tumour</i> - primary tumour from prostate<br>
+          <i>Metastatic primary tumour</i> - samples from primary tumour derived from prostate cancer patients with metastasis<br>
           <i>Metastasis</i> - samples from metastatic prostate cancer tissues<br>
       </tr>
   </table>
-<br><br><br><br>
-
-  <center><h4> Transcriptomics landscape </h4></center>
-  <br>
-  <center>
-    <tr>
-        <td ><a href="index.php"><img class="menu_sel" src="../images/transcriptomics_landscape.png" style="width:80%"/></a></td>
-    </tr>
-  </center>
 </div>
 
-<br><br>
-
-<div class="container" id="description">
-  <table id="sel_container">
-      <tr>
-          <i>Red numbers</i> - number of up-regulated genes observed between corresponding prostate cancer stages<br>
-          <i>Blue numbers</i> - number of down-regulated genes observed between corresponding prostate cancer stages<br>
-      </tr>
-  </table>
-</div>
 <br>
 <script> LoadSelector() </script>
 

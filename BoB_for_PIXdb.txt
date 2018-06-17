@@ -99,7 +99,10 @@ cd /Library/WebServer/Documents/PIXdb/pixdb_backoffice
 
 chown marzec01:everyone data/
 
-chown marzec01:everyone tmp/ 
+chown marzec01:everyone tmp/
+
+### This changes the tmp folder permissions to drwxrwxr-x
+chmod 775 tmp/
 
 
 ### It may be also necessary to change the /etc/apache2/httpd.conf to include "Require all granted" instead of "Require all denied"

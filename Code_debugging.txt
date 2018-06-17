@@ -39,3 +39,12 @@ cd /Library/WebServer/Documents/PIXdb/pages/scripts
 Rscript LiveGeneExpression.R --exp_file /Library/WebServer/Documents/PIXdb/pixdb_backoffice/data/E-MEXP-1243_18596959/norm_files/1243_1.processed.genename.csv --target /Library/WebServer/Documents/PIXdb/pixdb_backoffice/data/E-MEXP-1243_18596959/target.txt --colouring "Target" --gene "SAMD11" --dir /Library/WebServer/Documents/PIXdb/PIXdb/pixdb_backoffice/tmp --hexcode "mvez8d"
 
 ### Investigate what is the problem from here
+
+
+### Once can also use web browser to run the scripts., e.g. 
+
+http://localhost/PIXdb/pages/scripts/LaunchCommand.php?TypeAnalysis=gene_expression&ArrayExpressCode=TCGA&PMID=26544944&Genes=KRAS&rc=butj59
+
+### This command can be found in "Google Inspect" option, under "Network" tab, "XHR", clicking on the command line in the left-bottom corner and then the "Headers". The URL command will be displayed as "Request URL".
+
+

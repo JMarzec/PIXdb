@@ -107,7 +107,7 @@ echo "</div>
                // checking if the file for the analysis is available
                if (file_exists("$result_directory/estimate.html")) {
                  echo "<div class='estimate_container'>
-                         <iframe class='results' id='estimate' onload='resizeIframe(this)' scrolling='no' src='$iframe_directory/estimate.html'></iframe>
+                         <iframe class='results' id='estimate' scrolling='no' src='$iframe_directory/estimate.html'></iframe>
                        </div>";
 
                  // loading tumor purity datatable
