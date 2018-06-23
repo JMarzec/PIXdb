@@ -102,7 +102,7 @@ quit;
 ############################################################
 
 
-CREATE TABLE Cross_platforms (ensembl_id VARCHAR(20) NOT NULL, hgnc_symbol VARCHAR(200), description VARCHAR(500), chromosome_name VARCHAR(50), band VARCHAR(20), strand VARCHAR(2), start_position VARCHAR(10), end_position VARCHAR(10), rank_TvsN VARCHAR(10), average_log2fc_TvsN VARCHAR(10), combined_p_TvsN VARCHAR(10), rank_HvsN VARCHAR(10), average_log2fc_HvsN VARCHAR(10), combined_p_HvsN VARCHAR(10), rank_TvsH VARCHAR(10), average_log2fc_TvsH VARCHAR(10), combined_p_TvsH VARCHAR(10), rank_TmvsT VARCHAR(10), average_log2fc_TmvsT VARCHAR(10), combined_p_TmvsT VARCHAR(10), rank_MvsT VARCHAR(10), average_log2fc_MvsT VARCHAR(10), combined_p_MvsT VARCHAR(10));
+CREATE TABLE Cross_platforms (ensembl_id VARCHAR(20) NOT NULL, hgnc_symbol VARCHAR(200), description VARCHAR(500), chromosome_name VARCHAR(50), band VARCHAR(20), strand VARCHAR(2), start_position VARCHAR(10), end_position VARCHAR(10), rank_TvsN VARCHAR(10), rank_TvsN_percentile VARCHAR(10), average_log2fc_TvsN VARCHAR(10), combined_p_TvsN VARCHAR(10), rank_HvsN VARCHAR(10), rank_HvsN_percentile VARCHAR(10), average_log2fc_HvsN VARCHAR(10), combined_p_HvsN VARCHAR(10), rank_TvsH VARCHAR(10), rank_TvsH_percentile VARCHAR(10), average_log2fc_TvsH VARCHAR(10), combined_p_TvsH VARCHAR(10), rank_TmvsT VARCHAR(10), rank_TmvsT_percentile VARCHAR(10), average_log2fc_TmvsT VARCHAR(10), combined_p_TmvsT VARCHAR(10), rank_MvsT VARCHAR(10), rank_MvsT_percentile VARCHAR(10), average_log2fc_MvsT VARCHAR(10), combined_p_MvsT VARCHAR(10));
 
 
 USE pixdb;
@@ -196,7 +196,7 @@ DESCRIBE Keywords;
 ############################################################
 
 
-CREATE TABLE Cross_platforms (ensembl_id VARCHAR(20) NOT NULL, hgnc_symbol VARCHAR(200), description VARCHAR(500), chromosome_name VARCHAR(50), band VARCHAR(20), strand VARCHAR(2), start_position VARCHAR(10), end_position VARCHAR(10), rank_TvsN VARCHAR(10), average_log2fc_TvsN VARCHAR(10), combined_p_TvsN VARCHAR(10), rank_HvsN VARCHAR(10), average_log2fc_HvsN VARCHAR(10), combined_p_HvsN VARCHAR(10), rank_TvsH VARCHAR(10), average_log2fc_TvsH VARCHAR(10), combined_p_TvsH VARCHAR(10), rank_TmvsT VARCHAR(10), average_log2fc_TmvsT VARCHAR(10), combined_p_TmvsT VARCHAR(10), rank_MvsT VARCHAR(10), average_log2fc_MvsT VARCHAR(10), combined_p_MvsT VARCHAR(10));
+CREATE TABLE Cross_platforms (ensembl_id VARCHAR(20) NOT NULL, hgnc_symbol VARCHAR(200), description VARCHAR(500), chromosome_name VARCHAR(50), band VARCHAR(20), strand VARCHAR(2), start_position VARCHAR(10), end_position VARCHAR(10), rank_TvsN VARCHAR(10), rank_TvsN_percentile VARCHAR(10), average_log2fc_TvsN VARCHAR(10), combined_p_TvsN VARCHAR(10), rank_HvsN VARCHAR(10), rank_HvsN_percentile VARCHAR(10), average_log2fc_HvsN VARCHAR(10), combined_p_HvsN VARCHAR(10), rank_TvsH VARCHAR(10), rank_TvsH_percentile VARCHAR(10), average_log2fc_TvsH VARCHAR(10), combined_p_TvsH VARCHAR(10), rank_TmvsT VARCHAR(10), rank_TmvsT_percentile VARCHAR(10), average_log2fc_TmvsT VARCHAR(10), combined_p_TmvsT VARCHAR(10), rank_MvsT VARCHAR(10), rank_MvsT_percentile VARCHAR(10), average_log2fc_MvsT VARCHAR(10), combined_p_MvsT VARCHAR(10));
 
 
 USE pixdb_test;
