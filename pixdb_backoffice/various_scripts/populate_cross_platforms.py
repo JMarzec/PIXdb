@@ -22,7 +22,7 @@ cross_platforms_file = args.cross_platforms[0]
 # =============== Connect to MySQL database ===========================#
 db = MySQLdb.connect(host="localhost",  # your host, usually localhost
                      user="root",           # your username
-                     passwd="Biotech8886",         # your password
+                     passwd="Biotech20188",         # your password
                      db="pixdb")        # name of the data base
 
 # you must create a Cursor object. It will let
