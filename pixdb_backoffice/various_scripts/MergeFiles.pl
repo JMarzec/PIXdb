@@ -45,11 +45,12 @@ my $colNo;
 my $outFile;
 my $rowsFile1 = 0;
 my $rowsFile2 = 0;
+my $colsFile2 = 0;
 my $rowsOverlap = 0;
 my %file2Index = ();
 
 while ($arg = shift) {
-    
+
     if ($arg =~ /^-f1$/) {
         $inFile1 = shift;
     } elsif ($arg =~ /^-f2$/) {
@@ -74,16 +75,19 @@ open (FILE_2, $inFile2) or die $!;
 
 #if ( $inFile1 && $inFile2 && $colNo && $outFile )
 while (my $record = <FILE_2>) {
-	
+
     $rowsFile2++;
     my @info = split(/\t/, $record);
-    
+
+    ##### Keep the number of number of columns to fill merged matrix with 'NAs' in case primary file has rows absent in secondary file
+    $colsFile2 = scalar(@info);
+
 	if ( $info[$colNo] ) {
         ##### Remove the content of the specified column to avoid redundancy when the files are combined
         $record =~ s/$info[$colNo]\t//;
         $record =~ s/\s$//g;
         $info[$colNo] =~ s/\s$//g;
-        
+
         $file2Index{ $info[$colNo] } = $record;
     }
 }
@@ -96,21 +100,21 @@ open (FILE_1, $inFile1) or die $!;
 open (OUTFILE, ">$outFile") or die $!;
 
 while (my $record = <FILE_1>) {
-    
+
     $rowsFile1++;
     my @info = split(/\t/, $record);
-    
+
     $record =~ s/\s$//g;
     $info[$colNo] =~ s/\s$//g;
-    
+
 	if ( exists $file2Index{ $info[$colNo] } ) {
-        
+
         print ( OUTFILE $record."\t".$file2Index{ $info[$colNo] }."\n" );
         $rowsOverlap++;
     } else {
-		
-        print ( OUTFILE $record."\n" );
-	}		
+		    my $emptyRecord = "\tNA" x ($colsFile2 -1) ;
+        print ( OUTFILE $record.$emptyRecord."\n" );
+	}
 }
 close(FILE_1);
 close(OUTFILE);
@@ -129,18 +133,17 @@ exit;
 
 sub usage () {
     print <<"EOS";
-    
+
 usage: $0 -f1 file_1 -f2 file_2 -c column -o out_file
-    
+
     Input data
     -f1 file_1: Primary file
     -f2 file_2: Secondary file to merged to the primary file based on the common content of specified column
     -c column:  The number of column on which the merge should be based
-        
+
     Output data
     -o out_file: The output name with full path
 
 EOS
 exit;
 }
-
