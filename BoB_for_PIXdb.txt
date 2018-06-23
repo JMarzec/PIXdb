@@ -101,8 +101,8 @@ chown marzec01:everyone data/
 
 chown marzec01:everyone tmp/
 
-### This changes the tmp folder permissions to drwxrwxr-x
-chmod 775 tmp/
+### This changes the tmp folder permissions to drwxrwxrwx
+chmod 777 tmp/
 
 
 ### It may be also necessary to change the /etc/apache2/httpd.conf to include "Require all granted" instead of "Require all denied"
