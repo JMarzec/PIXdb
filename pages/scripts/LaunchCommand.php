@@ -182,6 +182,6 @@ if ($TypeAnalysis == "gene_expression") {
   // *** Gene Expression Analyses for cross-platform data *** //
   // launching Rscript for the analysis...
   $expr_file = "$absolute_root_dir/pixdb_backoffice/data/crossplatform/Meta_genes_TumourvsNormal_HGPINvsNormal_TumourvsHGPIN_Tumour_metvsTumour_MetastasisvsTumour_DEbound_summary.txt";
+  // error_log("$R_dir/Rscript LiveRankStats.R --results_file $expr_file --gene $genes --dir $tmp_dir --hexcode $unique_id 2>&1", $output);
   system("$R_dir/Rscript LiveRankStats.R --results_file $expr_file --gene $genes --dir $tmp_dir --hexcode $unique_id 2>&1", $output);
-
 }
