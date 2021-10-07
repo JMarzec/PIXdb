@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Pancreatic Expression Database</title>
-<link rev="made" href="mailto:Claude.Chelala%40cancer.org.uk" />
+<title>Prostate Integrative Expression Database</title>
+<link rev="made" href="mailto:help@pixdb.org.uk" />
 <meta name="keywords" content="snp" />
 <meta name="copyright" content="Centre for Molecular Oncology, Institute of cancer" />
-<link rel="stylesheet" type="text/css" href="pedstyle.css" />
+<link rel="stylesheet" type="text/css" href="pixdbstyle.css" />
 <link rel="stylesheet" type="text/css" href="egtabs.css" />
 <script src="tabber.js" type="text/javascript" ></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -24,9 +24,9 @@
 		$('.control img').on({
 				'click': function(e) {
 
-						var src = ($(this).attr('src') === '/PIXdb/images/plus-minus-larger/expand-large-blue-Shapes4FREE.png')
-								? '/PIXdb/images/plus-minus-larger/collapse-large-blue-Shapes4FREE.png'
-								: '/PIXdb/images/plus-minus-larger/expand-large-blue-Shapes4FREE.png';
+						var src = ($(this).attr('src') === '../images/plus-minus-larger/expand-large-blue-Shapes4FREE.png')
+								? '../images//plus-minus-larger/collapse-large-blue-Shapes4FREE.png'
+								: '../images//plus-minus-larger/expand-large-blue-Shapes4FREE.png';
 						$(this).attr('src', src);
 						$(this).parent().parent().next().toggle();
 						e.stopPropagation();
@@ -124,7 +124,7 @@
     }
     #navcontainer
 		{
-			background: transparent url(/PIXdb/images/list-off.gif) left center no-repeat;
+			background: transparent url(../images/list-off.gif) left center no-repeat;
 			padding: 0;
 		}
 
@@ -166,39 +166,6 @@
 </head>
 
 <body >
-<div id="biomart-top-wrapper">
- <div id="snpalizer-header">
-  <div id="snpalizer-header-2">
-	<div class="wrapper">
-		<div id="header">
-		  <div id="toolbar">
-		     <div class="right">
-		          <div class="module   first last">
-			<a target="_blank" href="http://www.smd.qmul.ac.uk/"><img title="Barts and the London" alt="barts-and-london_sml" src="..//PIXdb/images/barts-and-london_sml_white.png" style="border:0"></a>
-		          </div>
-		     </div>
-		  </div>
-		<div id="headermid">
-			<div id="logo">
-			<p><img src="..//PIXdb/images/ped_logo.png" alt="Pancreatic expression database" title="Pancreatic expression database" style="width:295px;height:144px;border:0"></p>
-			</div>
-			<div id="banner">
-				<a target="_blank" href="http://www.bci.qmul.ac.uk/"><p><img src="..//PIXdb/images/bci_logo_white.png" alt="Barts Cancer Institute" title="Barts Cancer Institute" style="border:0"></a></p>
-			</div>
-		</div>
-		</div>
-	</div>
- </div>
-</div>
-
-  <ul id="snpalizer-nav-list">
-    <li><a href="http://www.pancreasexpression.org/">Home</a></li>
-    <li><a href="http://www.analytics.pancreasexpression.org/pages/" target="_blank">Analytics</a></li>
-	<li><a href="/includes/PancreaticCancerLandscape.html" target="_blank" >Expression Landscape</a></li>
-	<li><a href="/includes/help.html" target="_blank">User Guide</a></li>
-	<li><a href="/includes/query_examples.html" target="_blank">Examples</a></li>
-	<li><a href="mailto:help@pancreasexpression.org.uk">Contact</a></li>
-  </ul>
 
 <!--<ul id="snpalizer-nav-list">
   <li><a href="index.html">Home</a></li>
@@ -219,256 +186,364 @@
 <div id="snpalizer-content">
   <div id="body-content">
     <div id="navcontainer1">
-      <div style="padding:20px;"></div>
+      <div style="padding:5px;"></div>
 	  <div class="tabber " style="width:900px" align="center">
 		<div class="tabbertab tabbertabdefault">
-			   <h2>Analytics</h2>
-			         <div id="navcontainer2" class="alt-div-1">
+			   <h2>User Guide</h2>
+			<div id="navcontainer2" class="alt-div-1">
         <div id="ped" class="section-title" >
           <div class="heading"><b><a name="ped">1 Data Content</a></b></div>
-          <div class="control"><img data-other-src="/PIXdb/images/plus-minus-larger/collapse-large-blue-Shapes4FREE.png" src="/PIXdb/images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
+          <div class="control"><img data-other-src="../images/plus-minus-larger/collapse-large-blue-Shapes4FREE.png" src="../images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
         </div>
-        <div id="ped_div" class="navcontainer4">
-        <p>
-		The module is divided into four components, named after the core data sources: <a target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/">PubMed</a>,
-		The Cancer Genome Atlas (<a target="_blank" href="https://cancergenome.nih.gov/">TCGA</a>),
-		the Gene Expression Omnibus (<a target="_blank" href="https://www.ncbi.nlm.nih.gov/geo/">GEO</a>), <a target="_blank" href="https://www.ebi.ac.uk/arrayexpress/">ArrayExpress</a>,
-		Genomics Evidence Neoplasia Information Exchange (<a target="_blank" href="http://www.aacr.org/Research/Research/Pages/aacr-project-genie.aspx#.Wbp6XneGN25">GENIE</a>)
-		and the Cancer Cell Line Encyclopedia (<a target="_blank" href="https://portals.broadinstitute.org/ccle_legacy/home">CCLE</a>).
-		<p></p>
-		<b>PubMed</b>: An automated data selection and retrieval system has been implemented. Publications of interest are identified from PubMed.
-		Gene Expression Omnibus or ArrayExpress identifiers are used to establish computational links between the literature and any
-		associated data. If data is available in the public domain, the system accesses the repository and downloads the relevant data
-		files. These are fed into the relevant analytical pipelines and made available from the PubMed tab.
-		<p></p>
-		<b>TCGA</b>: The Cancer Genome Atlas is a consortium dedicated to the systematic study of alterations in a variety of human cancers.
-		It has made publicly available mRNA expression, DNA copy number, mutation and methylation data, alongside its associated clinical
-		data for a range of cancer types/subtypes. Currently, mRNA expression, DNA copy number and mutation data are available for analysis,
-		with methylation data to follow shortly.
-		<p></p>
-		<b>GENIE</b>: Genomics Evidence Neoplasia Information Exchange is a pilot project that seeks to identify and validate genomic
-		biomarkers relevant to cancer treatment by linking tumour genomic data from clinical sequencing efforts with longitudinal clinical
-		outcomes. It has made publicly available DNA copy number and mutation data, alongside its associated clinical data for a range of
-		cancer types/subtypes.
-		<p></p>
-		<b>CCLE</b>: Cancer Cell Line Encyclopedia project is an effort to conduct a detailed genetic characterization of a large panel of
-		human cancer cell lines. mRNA expression, DNA copy number and mutation data for pancreatic cancer cell lines are available from this
-		tab.
-		<p></p>
-		Currenlty, the PubMed component holds expression profiles of pancreas-related samples
-		or cell lines generated using microarray (n=2066) or sequencing (n=997) technologies.The TCGA component contains
-		expression (n=182), DNA copy number (n=177) and mutation (n=182) data derived from the TCGA pancreatic adenocarcinoma cohort.
-		The GENIE component contains DNA copy number/gene fusion (n=355) and mutation (n=455) data derived from various pancreatic
-		malignancies and precursor lesions. The CCLE component contains expression, DNA copy number and mutation data derived from
-		44 pancreas-related cell lines. Patient survival data is also available for a large number of patients in the PubMed (n=445)
-		and TCGA (n=182) components.
-		<br>
-		<p>
-			<img src="/PIXdb/images/guide/analytics_data_treemap.png" class="img_center" width="600"></img>
-		<p>
-		<br>
-		The datasets extracted from different sources undergo a pre-processing workflow to ensure comparability and interoperability
-		before being fed into the relevant analytical pipelines. The normalised mRNA expression data extracted from TCGA, CCLE and
-		GEO/ArrayExpress undergo z-score transformation to ensure data from different studies are brought onto the same scale; the
-		copy number data extracted from TCGA, GENIE and CCLE are binary-coded based on a hard threshold (2:Amplification; 1:Gain;
-		-1:Loss; -2:Deletion).
+      <div id="ped_div" class="navcontainer4">
+    <br>
+		In total, 1,488 transcriptomic profiles from 472 normal (83 healthy or benign prostate enlargement (BPH) and 389 normal adjacent)
+    prostate tissues, 33 high-grade prostatic intraepithelial neoplasia (HGPIN) samples, 880 samples from primary prostate cancer patients
+    without metastasis (primary tumour), 31 samples from primary prostate cancer with metastasis (metastatic primary tumour) and 72
+    samples from metastatic prostate cancer tissues (metastasis) are available for evaluation of aberrantly expressed genes associated
+    with prostate cancer initiation, development and progression to aggressive disease.
+    <br>
+    <div class="container" id="description">
+      <br>
+      <center>
+        <tr>
+            <td><a href="index.php"><img class="menu_sel" src="../images/data_summary_help.png" style="width:70%"/></a></td>
+        </tr>
+      </center>
+    </div>
+    <div class="container" id="description">
+      <table id="sel_container">
+          <tr>
+              <i>Normal prostate</i> - tissue from healthy prostate or benign prostate hyperplasia (BPH)<br>
+              <i>Normal adjacent</i> - normal prostate tissue adjacent to tumour<br>
+              <i>HGPIN</i> - high-grade prostatic intraepithelial neoplasia<br>
+              <i>Primary tumour</i> - primary tumour from prostate<br>
+              <i>Metastatic primary tumour</i> - samples from primary tumour derived from prostate cancer patients with metastasis<br>
+              <i>Metastasis</i> - samples from metastatic prostate cancer tissues<br><br>
+              <i>*</i> gene expression profiles produced with RNA-seq platforms<br>
+          </tr>
+      </table>
+    </div>
+    <br><br>
+    These data is presented within three different components reflecting the main step of the underlying <a target="_blank" href="https://pages.github.research.its.qmul.ac.uk/hfw456/transcriptomics_data_integration/">integrative analysis framework</a>:
+		<br><br>
+		<b>Per-dataset</b>: From this tab, you will be able to conduct multiple analyses, including principal component analysis (PCA),
+    estimates of tumour purity, heatmap, expression profile and correlation plots, survival analyses and gene networks, using gene
+    expression data from one of the 18 comprehensive and QC-checked datasets included in PIXdb.
+		<br><br>
+		<b>Per-platform</b>: This tab allows you to perform analyses using combined expression data from the same platform. Available
+    analyses include PCA, estimates of tumour purity, heatmap, expression profile and correlation plots, as well as investigate gene networks.
+    Although PIXdb contains datasets generated using eight different
+    platforms (RNA-seq, Affymetrix Human Exon 1.0 ST, Affymetrix Human Genome U133 Plus 2.0, U133A, U95Av2, U95B, U95C and llumina HumanHT-12 v3.0), the analyses
+    within this tab are available for data from five platforms (RNA-seq, Affymetrix Human Exon 1.0 ST, Affymetrix Human Genome U133 Plus 2.0, U133A, U95Av2), since datasets from Affymetrix Human Genome
+    U95B, U95C and llumina HumanHT-12 v3.0 were represented by single datasets and are already available from the <i>per-dataset</i> tab.
+		<br><br>
+		<b>Cross-platform</b>: This tab contains results from the largest multi-cohort study of prostate cancer mRNA profiles to date.
+    Using data derived from a combination of RNA-seq and microarray platforms, we applied our <a href="https://pages.github.research.its.qmul.ac.uk/hfw456/transcriptomics_data_integration/" target="_blank">cross-platform data integration pipeline</a>
+    to an extensive set of prostate-related gene expression profiles, including <i>normal prostate</i>, <i>HGPIN</i>,
+    <i>primary prostate cancers</i> from patients <i>with</i> and <i>without metastasis</i>, and <i>metastatic prostate cancer</i> tissues, to reveal the <b>transcriptomics landscape</b>
+    of this disease. Here, you can find a summary table with gene ranks indicating individual gene's evidence for aberrant expression in various
+    biological comparisons. You can also explore the results for each biological comparison using volcano plot and heatmap, as well as
+    query these statistics for individual genes. A detailed description of the integrative analysis pipeline is described in <a target="_blank" href="https://pages.github.research.its.qmul.ac.uk/hfw456/transcriptomics_data_integration/">GitHub repository</a>.
+		<br><br>
 	</div>
 </div>
-				 
+
 <div id="navcontainer2" class="alt-div-1">
-        <div id="ped" class="section-title" >
-          <div class="heading"><b><a name="ped">2 Analytical features</a></b></div>
-          <div class="control"><img data-other-src="/PIXdb/images/plus-minus-larger/collapse-large-blue-Shapes4FREE.png" src="/PIXdb/images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
+        <div id="pixdb" class="section-title" >
+          <div class="heading"><b><a name="pixdb">2 Analytical features</a></b></div>
+          <div class="control"><img data-other-src="../images/plus-minus-larger/collapse-large-blue-Shapes4FREE.png" src="../images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
         </div>
-        <div id="ped_div" class="navcontainer4">
-        <p>	
-		To start the analysis you need to select one of the four data source: PubMed, TCGA, GENIE or CCLE. Once you have
+        <div id="pixdb_div" class="navcontainer4">
+    <br>
+		To start the analysis you need to select one of the three analysis types: per-dataset, per-platform or cross-platform. Once you have
 		selected a source, you will be directed to a page from which you will be able to conduct exploratory and investigative analyses.
-		<p></p>
-		The exploratory analytical features provide pre-computed results for principal component analysis (PCA), estimation of
-		tumour purity and whole-genome view of expression or copy number alteration events. The investigative analytical features
-		include expression profiling, correlation analysis, survival analysis, copy number analysis, mutational profiling and gene
-		network analysis, which are performed on the fly based on user-specific query. For TCGA and CCLE datasets that contain data
-		generated from different technologies, an integrative modality is made available to investigate relationships between mutations,
-		expression and copy number changes at individual gene or whole-genome level.
-		<p></p>
-		Key figures and tables are presented in an interactive online and are also available for download. These are dynamic,
-		allowing you to zoom in/out, focus on areas of interest, visualise the annotation of data points, and exclude or include
-		samples in pre-defined biological groups.
-		<p></p>
-		<i>nb It is important to read the original publication to understand the features of the samples and interpret the findings from
-		PED analytical module fully.</i>
-		<p>
+		<br><br>
+		The <b>per-dataset</b> and <b>per-platform</b> components contain a wide range of exploratory features, including principal component analysis (PCA), estimation of
+		tumour purity (<a target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/24113773">ESTIMATE</a>) and whole-genome view of expression
+    across various biological groups. The investigative analytical features include expression profiling, correlation, survival and gene network
+    analyses, which are performed on the fly based on user-specific query.
+    <br><br>
+    The <b>cross-platform</b> component provides compendium of molecular events observed across different prostate cancer development and
+    progression stages. It summarises information about cross-platform <i>fold-change</i> values and <i>p-values</i> with corresponding
+    gene rankings according to the evidence for differential expression derived from all datasets. The autocomplete feature allows users
+    to browse the gene data without searching for a specific entry and the analytical and visualisation layers based on pre-processed
+    data reduce the response times.
+		<br><br><br>
 		<center>
 			<table class="sofT2" style="width:700px;">
-					<tr><td class="helpHed" colspan="7" >PED analytics module features</td></tr>
-					<tr><th class="helpHed2">Data type</th><th class="helpHed2">Analytical features</th><th class="helpHed2">Unit of analysis</th><th class="helpHed2">PubMed</th><th class="helpHed2" >TCGA</th><th class="helpHed2" >GENIE</th><th class="helpHed2" >CCLE</th></tr>
-					<tr><td class="helpHed3" style="text-align:left">Gene expression</td><td class="helpHed3">Principal Component Analysis</td><td class="helpHed3">Dataset</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center">&#10003</td></tr>
-					<tr><td class="helpHed3" style="text-align:left">Gene expression</td><td class="helpHed3">Tumour purity</td><td class="helpHed3">Dataset</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center">&#10003</td></tr>
-					<tr><td class="helpHed3" style="text-align:left">Gene expression</td><td class="helpHed3">Expression profiles <br>(<i>gene-specific</i>)</td><td class="helpHed3">Gene</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center">&#10003</td></tr>
-					<tr><td class="helpHed3" style="text-align:left">Gene expression</td><td class="helpHed3">Expression profiles <br>(<i>whole-genome</i>)</td><td class="helpHed3">Biological group</td><td class="helpHed3" style="text-align:center" >&#10003</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center"></td></tr>
-					<tr><td class="helpHed3" style="text-align:left">Gene expression</td><td class="helpHed3">Correlation analysis</td><td class="helpHed3">Multiple Genes</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center">&#10003</td></tr>
-					<tr><td class="helpHed3" style="text-align:left">Gene expression</td><td class="helpHed3">Gene network</td><td class="helpHed3">Gene(s)</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center">&#10003</td></tr>
-					<tr><td class="helpHed3" style="text-align:left">Gene expression, survival</td><td class="helpHed3">Survival analysis</td><td class="helpHed3">Gene</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center"></td></tr>
-					<tr><td class="helpHed3" style="text-align:left">DNA copy number</td><td class="helpHed3">Copy number analysis <br>(<i>gene-specific</i>)</td><td class="helpHed3">Multiple Genes</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center">&#10003</td></tr>
-					<tr><td class="helpHed3" style="text-align:left">DNA copy number</td><td class="helpHed3">Copy number analysis <br>(<i>whole-genome</i>)</td><td class="helpHed3">Biological group</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center">&#10003</td></tr>
-					<tr><td class="helpHed3" style="text-align:left">Gene fusion</td><td class="helpHed3">Fusions</td><td class="helpHed3">Gene</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center"></td></tr>
-					<tr><td class="helpHed3" style="text-align:left">Mutation</td><td class="helpHed3">Mutations</td><td class="helpHed3">Gene</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center"></td></tr>
-					<tr><td class="helpHed3" style="text-align:left">Expression, DNA copy number, mutation</td><td class="helpHed3">Multi-omics data integration <br>(<i>gene-specific</i>)</td><td class="helpHed3">Gene</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center">&#10003</td></tr>
-					<tr><td class="helpHed3" style="text-align:left">Expression, DNA copy number, mutation</td><td class="helpHed3">Multi-omics data integration <br>(<i>whole-genome</i>)</td><td class="helpHed3">Biological group</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center">&#10003</td></tr>
+					<tr><th class="helpHed2">Analytical feature</th><th class="helpHed2">Unit of analysis</th><th class="helpHed2">Per-dataset</th><th class="helpHed2" >Per-platform</th><th class="helpHed2" >Cross-platform</th></tr>
+					<tr><td class="helpHed3">PCA</td><td class="helpHed3">Dataset</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center"></td></tr>
+					<tr><td class="helpHed3">Tumour purity</td><td class="helpHed3">Dataset</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center"></td></tr>
+          <tr><td class="helpHed3">Expression heatmap</td><td class="helpHed3">Dataset</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center"></td></tr>
+					<tr><td class="helpHed3">Expression profiles</td><td class="helpHed3">Gene</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center"></td></tr>
+					<tr><td class="helpHed3">Expression correlations</td><td class="helpHed3">Multiple Genes</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center"></td></tr>
+					<tr><td class="helpHed3">Survival analysis</td><td class="helpHed3">Gene</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center"></td></tr>
+          <tr><td class="helpHed3">Gene networks</td><td class="helpHed3">Gene, multiple genes</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center">&#10003</td><td class="helpHed3" style="text-align:center"></td></tr>
+					<tr><td class="helpHed3">Volcano plots</td><td class="helpHed3">Dataset</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center">&#10003</td></tr>
+					<tr><td class="helpHed3">Heatmap (<i>gene ranks</i>)</td><td class="helpHed3">Top ranked genes</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center">&#10003</td></tr>
+					<tr><td class="helpHed3">Statistics</td><td class="helpHed3">Gene</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center">&#10003</td></tr>
+          <tr><td class="helpHed3">Summary table</td><td class="helpHed3">Dataset</td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center"></td><td class="helpHed3" style="text-align:center">&#10003</td></tr>
 			</table>
 		</center>
-		<br>
-		<p>Results are presented in an interactive and informative graphical format using the open source visualization library
+    <br><br>
+    Results are presented in an interactive and informative graphical format using the open source visualization library
 		<a target="_blank" href="https://plot.ly/">Plotly</a>. The various statistical and scientific charts allow users to visualise the
-		annotation of data points, zoom to focus on area of interest, exclude/include subgroups in the data, and download as static image
-		files of publication quality.</p>
-		<p></p>
+		annotation of data points, zoom in/out to focus on area of interest, exclude/include subgroups in the data, and download as static image
+		files of publication quality. Summary tables are presented in an interactive tabular format with filtering, pagination, and sorting options,
+    and are available for download in multiple formats.
+		<br></br>
 	</div>
 </div>
 <div id="navcontainer3" class="alt-div-2">
-	<div id="ped_qi" class="section-title">
-			<div class="heading"><b><a name="ped_qi">2.1 PCA</a></b></div>
-			<div class="control"><img src="/PIXdb/images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
+	<div id="pixdb_qi" class="section-title">
+			<div class="heading"><b><a name="pixdb_qi">2.1 PCA</a></b></div>
+			<div class="control"><img src="../images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
 	</div>
-	<div id="ped_qi_div" class="navcontainer4">
-		<p>Principal component analysis (PCA) reduces the dimensionality of data while retaining most of the variation in the dataset,
+	<div id="pixdb_qi_div" class="navcontainer4">
+    <br>
+    Principal component analysis (PCA) reduces the dimensionality of data while retaining most of the variation in the dataset,
 		making it possible to visually assess similarities and differences between samples and determine whether samples can be grouped.
 		This exploratory analysis facilitates identification of the key factors affecting the variability in the mRNA expression data.
-		<p>For each dataset, scatterplots representing the first two (top) and the first three (bottom) principal components (PCs) of the data
-		are presented. In this instance, the dataset represents collection of pancreatic adenocarcinoma (PDAC) gene expression microarray
-		data, including data from primary tumour, metastatic and normal samples. Each data point represents the orientation of a single
-		sample in the transcriptomic space projected on the PCA, with different colours indicating the biological group to which each
-		sample belongs. The percentage values in brackets on each axis indicate the amount of variance in the data explained by the
-		corresponding PC.
-		<br>
+		<br><br>
+    For each dataset, scatterplots representing the first two (top) and the first three (bottom) principal components (PCs) of the data
+		are presented. In this instance, the plots present combined expression data from five sets of data produced with Affymetrix Human Genome U133 Plus 2.0
+    array, and including profiles from normal prostate and high-grade prostatic intraepithelial neoplasia (HGPIN) tissues,
+    primary prostate cancer patients with and without metastasis, as well as samples from metastatic prostate cancer tissues.
+    Each data point represents the orientation of a single sample in the transcriptomic space projected on the PCA, with different
+    colours indicating the biological group to which each sample belongs. The percentage values in brackets on each axis indicate the
+    amount of variance in the data explained by the corresponding PC.
+		<br><br>
 		<div style="overflow: hidden;margin-bottom:5px;">
-			<img src="/PIXdb/images/guide/analytics_PCA1.png" class="img_center" width="600"></img>
+			<img src="../images/guide/analytics_PCA1.png" class="img_center" width="600"></img>
 			<br>
-			<img src="/PIXdb/images/guide/analytics_PCA2.png" class="img_center" width="600"></img>
+			<img src="../images/guide/analytics_PCA2.png" class="img_center" width="600"></img>
 		</div>
-		<br>
-		<p>The global variability of the data can also be assessed from the scree plot. Here, you
+
+		<br><br>
+    The global variability of the data can also be assessed from the scree plot. Here, you
 		can identify the fraction of total variance (y-axis) attributed to each PC (x-axis). The PCs are ordered by
-		decreasing order of contribution to total variance. 
-		<br>
+		decreasing order of contribution to total variance.
+		<br><br>
 		<div style="overflow: hidden;margin-bottom:5px;">
-			<img src="/PIXdb/images/guide/analytics_PCA3.png" class="img_center" width="600"  height="350"></img>
+			<img src="../images/guide/analytics_PCA3.png" class="img_center" width="600"  height="350"></img>
+		</div>
+    <br>
+	</div>
+</div>
+
+<div id="navcontainer3" class="alt-div-2">
+	<div id="pixdb_qi" class="section-title">
+			<div class="heading"><b><a name="pixdb_qi">2.2 Tumour purity</a></b></div>
+			<div class="control"><img src="../images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
+	</div>
+	<div id="pixdb_qi_div" class="navcontainer4">
+    <br>
+		Cancer samples frequently contain a small proportion of infiltrating stromal and immune cells that may not only confound the
+		tumour signal in molecular analyses but may also have a role in tumourigenesis and progression. We apply <i>ESTIMATE</i><sup><a href='https://www.ncbi.nlm.nih.gov/pubmed/24113773' target=null>1</a></sup> algorithm that uses
+		gene expression data to calculate stromal score, immune score and estimate score, and infer tumour purity from these values.
+		<br><br>
+		<div style="overflow: hidden;margin-bottom:5px;">
+			<img src="../images/guide/analytics_tumour_purity1.png" class="img_center" width="600"></img>
+		</div>
+		<br><br>
+		The tumour purity estiamtes are also presented in form of an interactive table with filtering, pagination, and sorting options,
+    which is available for download in multiple formats.
+		<br><br>
+		<div style="overflow: hidden;margin-bottom:5px;">
+			<img src="../images/guide/analytics_tumour_purity2.png" class="img_center" width="600"></img>
 		</div>
 	</div>
 </div>
 
 <div id="navcontainer3" class="alt-div-2">
-	<div id="ped_qi" class="section-title">
-			<div class="heading"><b><a name="ped_qi">2.2 Tumour purity</a></b></div>
-			<div class="control"><img src="/PIXdb/images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
+	<div id="pixdb_qi" class="section-title">
+			<div class="heading"><b><a name="pixdb_qi">2.3 Expression profiles</a></b></div>
+			<div class="control"><img src="../images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
 	</div>
-	<div id="ped_qi_div" class="navcontainer4">
-		<p>Cancer samples frequently contain a small proportion of infiltrating stromal and immune cells that may not only confound the
-		tumour signal in molecular analyses but may also have a role in tumourigenesis and progression. We apply an algorithm that uses
-		gene expression data to calculate stromal score, immune score and estimate score, and infer tumour purity from these values. 
-		<br>
-		<div style="overflow: hidden;margin-bottom:5px;">
-			<img src="/PIXdb/images/guide/analytics_tumour_purity1.png" class="img_center" width="600"></img>
-		</div>
-		<br>
-		<p>The global variability of the data can also be assessed from the scree plot. Here, you
-		can identify the fraction of total variance (y-axis) attributed to each PC (x-axis). The PCs are ordered by
-		decreasing order of contribution to total variance. 
-		<br>
-		<div style="overflow: hidden;margin-bottom:5px;">
-			<img src="/PIXdb/images/guide/analytics_tumour_purity2.png" class="img_center" width="600"></img>
-		</div>
-	</div>
-</div>
-
-<div id="navcontainer3" class="alt-div-2">
-	<div id="ped_qi" class="section-title">
-			<div class="heading"><b><a name="ped_qi">2.3 Expression profiles</a></b></div>
-			<div class="control"><img src="/PIXdb/images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
-	</div>
-	<div id="ped_qi_div" class="navcontainer4">
-		<p>This analytical module visualises the distribution of mRNA expression measurements across all samples for a user-defined gene. You can view how the
-		expression of your gene of interest varies across different biological conditions.
+	<div id="pixdb_qi_div" class="navcontainer4">
+    <br>
+		This analytical module visualises the distribution of mRNA expression measurements across all samples for a user-defined gene.
 		To provide a comprehensive overview of expression values across the biological groups, results are presented as both summarised and a
 		sample views (box plot and bar plot, respectively). The box plot (top) demonstrates mRNA expression level quartiles (y-axis)
-		in samples stratified according to their group (x-axis). It can be used to can view if, and how, the expression of your gene of interest varies
-		across the different biological groups. To facilitate the understanding of any differences, a barplot in which the expression values of individual
-		samples (bars) is also provided (bottom). It illustrates the expression level of the gene of interest in individual samples clustered by biological
-		group and ordered within each group by expression value (y-axis) of the queried gene.
-		</p>
+		in samples stratified according to their group (x-axis). It can be used to view if, and how, the expression of your gene of interest varies across
+		the different biological groups. For more in-depth insight, a barplot (bottom) is also provided. It presents the expression level
+    of the gene of interest in individual samples clustered by biological group and ordered within each group by expression value (y-axis) of the queried gene.
+		<br><br>
 		<div style="overflow: hidden;margin-bottom:5px;">
-			<img src="/PIXdb/images/guide/analytics_expr_profiles1.png" class="img_center" width="600"></img>
+			<img src="../images/guide/analytics_expr_profiles1.png" class="img_center" width="600"></img>
 			<br>
-			<img src="/PIXdb/images/guide/analytics_expr_profiles2.png" class="img_center" width="600"></img>
+			<img src="../images/guide/analytics_expr_profiles2.png" class="img_center" width="600"></img>
 		</div>
+    <br>
 	</div>
 </div>
 
 <div id="navcontainer3" class="alt-div-2">
-	<div id="ped_qi" class="section-title">
-			<div class="heading"><b><a name="ped_qi">2.4 Expression correlations</a></b></div>
-			<div class="control"><img src="/PIXdb/images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
+	<div id="pixdb_qi" class="section-title">
+			<div class="heading"><b><a name="pixdb_qi">2.4 Expression correlations</a></b></div>
+			<div class="control"><img src="../images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
 	</div>
-	<div id="ped_qi_div" class="navcontainer4">
-		<p>This module performs pairwise comparisons of expression profiles between multiple user-defined genes in selected dataset and calculates Pearson's
-		correlation coefficients and p-values for each comparison.</p>
-		<p>For queried set of genes (at least 2 and up to 50), the portal computes Pearson's correlation coefficients and corresponding p-values for all
+	<div id="pixdb_qi_div" class="navcontainer4">
+		<br>
+    This module performs pairwise comparisons of expression profiles between multiple user-defined genes in selected dataset. For the queried set of
+    genes (at least 2 and up to 50) the funtcion computes Pearson's correlation coefficients and corresponding  <i>p-values</i> for all
 		pairwise combinations of genes and displays the correlation coefficients in a form of pairwise comparison heatmap. The colour of each cell indicates
 		correlation coefficient between corresponding genes labelled on the x-axis and y-axis. The heatmap colour key is displayed on the right-side of the
-		plot with red and blue indicating high and low correlation values, respectively.</p>
+		plot with red and blue indicating high and low correlation values, respectively.
+    <br><br>
 		<div style="overflow: hidden;margin-bottom:5px;">
-			<img src="/PIXdb/images/guide/analytics_expr_correlation1.png" class="img_center" width="600"></img>
+			<img src="../images/guide/analytics_expr_correlation1.png" class="img_center" width="600"></img>
 		</div>
+    <br>
 	</div>
 </div>
 
 <div id="navcontainer3" class="alt-div-2">
-	<div id="ped_qi" class="section-title">
-			<div class="heading"><b><a name="ped_qi">2.5 Survival analysis</a></b></div>
-			<div class="control"><img src="/PIXdb/images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
+	<div id="pixdb_qi" class="section-title">
+			<div class="heading"><b><a name="pixdb_qi">2.5 Survival analysis</a></b></div>
+			<div class="control"><img src="../images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
 	</div>
-	<div id="ped_qi_div" class="navcontainer4">
-		<p>From this tab the relationship between the expression of the gene of interest and survival can be assessed. A univariate Cox proportional hazards (PH)
-		regression is applied to the survival data and the samples are assigned to risk groups based on the median dichotomisation of mRNA expression
-		intensities of the selected gene. Relationships are presented as Kaplan-Meier plots. The hazard ratio (HR) and 95% confidence intervals (CI)
-		from the Cox PH model and associated log-rank p-value are presented in the top right corner of the figure.</p>
-		<div style="overflow: hidden;margin-bottom:5px;">
-			<img src="/PIXdb/images/guide/analytics_survival1.png" class="img_center" width="600"></img>
-		</div>
-	</div>
-</div>
-
-<div id="navcontainer3" class="alt-div-2">
-	<div id="ped_qi" class="section-title">
-			<div class="heading"><b><a name="ped_qi">2.6 Gene networks</a></b></div>
-			<div class="control"><img src="/PIXdb/images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
-	</div>
-	<div id="ped_qi_div" class="navcontainer4">
-		<p>For each comparative group defined in the dataset, the interactions between genes of interest and their primary neighbours can be displayed in an
-		interactive network. In the resulting gene networks (top), nodes represent the genes while edges represent the interactions. Nodes are coloured according
-		to the expression level (z-score) in the dataset of interest (bottom).</p>
-		<div style="overflow: hidden;margin-bottom:5px;">
-			<img src="/PIXdb/images/guide/analytics_gene_networks1.png" class="img_center" width="600"></img>
-			<br>
-			<img src="/PIXdb/images/guide/analytics_gene_networks2.png" class="img_center" width="300"></img>
-		</div>
+	<div id="pixdb_qi_div" class="navcontainer4">
 		<br>
-		<p>A detailed report of the interactions composing the network, together with the list of PMIDs that support each relationship, is provided in tabular format.</p>
+    From this tab the relationship between the expression of the gene of interest and survival can be assessed. A univariate <i>Cox proportional hazards (PH)
+		regression</i> is applied to the survival data and the samples are assigned to risk groups based on the median dichotomisation of mRNA expression
+		intensities of the selected gene. Relationships are presented as Kaplan-Meier plots. The <i>hazard ratio (HR)</i> and 95% <i>confidence intervals (CI)</i>
+		from the <i>Cox PH model</i> and associated <i>log-rank p-value</i> are presented in the top right corner of the figure.
+    <br><br>
 		<div style="overflow: hidden;margin-bottom:5px;">
-			<img src="/PIXdb/images/guide/analytics_gene_networks3.png" class="img_center" width="600"></img>
+			<img src="../images/guide/analytics_survival1.png" class="img_center" width="600"></img>
 		</div>
+    <br>
+    To calculate <i>HR</i> for each gene, patients are dichotomised into low- and high-risk groups based on the expression measurements using
+    <i>best-performing cut-off</i><sup><a href='https://www.ncbi.nlm.nih.gov/pubmed/24367507' target=null>2</a></sup> algorithm. In brief, for successive
+    percentiles of expression between the lower and upper quartiles the <i>log-rank</i> test <i>p-values</i> are computed and the best performing threshold
+    is used as the final cut-off in regression analysis. This method is particularly useful for analysing datasets with different proportion of events,
+    which condition the expected cut-off points distinguishing patients with low and high hazard rates.
+    <br><br>
 	</div>
 </div>
 
-			   </div>
+<div id="navcontainer3" class="alt-div-2">
+	<div id="pixdb_qi" class="section-title">
+			<div class="heading"><b><a name="pixdb_qi">2.6 Gene networks</a></b></div>
+			<div class="control"><img src="../images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
+	</div>
+	<div id="pixdb_qi_div" class="navcontainer4">
+		<br>
+    For each comparative group defined in the dataset, the interactions between genes of interest and their primary neighbours can be displayed in an
+		interactive network. The networks are based on manually curated protein-protein interaction from <i>mentha</i><sup><a href='https://www.ncbi.nlm.nih.gov/pubmed/23900247' target=null>3</a></sup>
+    database. In the resulting gene networks (top), nodes represent the genes while edges represent the interactions. Nodes are coloured according
+		to the expression level (z-score) in the dataset of interest (bottom).
+    <br><br>
+		<div style="overflow: hidden;margin-bottom:5px;">
+			<img src="../images/guide/analytics_gene_networks1.png" class="img_center" width="600"></img>
+			<br>
+			<img src="../images/guide/analytics_gene_networks2.png" class="img_center" width="300"></img>
+		</div>
+		<br><br>
+		A detailed report of interactions composing the network, together with the list of hyperlined PMIDs that support each relationship, is provided in tabular format.
+    <br><br>
+    <div style="overflow: hidden;margin-bottom:5px;">
+			<img src="../images/guide/analytics_gene_networks3.png" class="img_center" width="600"></img>
+		</div>
+    <br>
+	</div>
+</div>
+
+<div id="navcontainer3" class="alt-div-2">
+	<div id="pixdb_qi" class="section-title">
+			<div class="heading"><b><a name="pixdb_qi">2.7 Volcano plots</a></b></div>
+			<div class="control"><img src="../images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
+	</div>
+	<div id="pixdb_qi_div" class="navcontainer4">
+		<br>
+    This tab presents volcano plots upon selecting the biological comparisons. Each volcano plot presents the <i>-log10</i> of the combined <i>p-values</i> (the measure of the change statistical
+    significance) on the y-axis as a function of <i>log2 fold-change</i> values (the measure of gene expression change) on the x-axis . Genes (dots) that are highly dysregulated are farther to
+    the left and right sides, while highly significant changes appear higher on the plot. Genes are coloured based on their <i>log2 fold-change</i> with the colour key presented on the right-hand side.
+    The user can chose to display only genes with certain magnitude of expression change by (un)selecting the <i>log2 fold-change</i> values on the right-hand side.
+    <br><br>
+		<div style="overflow: hidden;margin-bottom:5px;">
+			<img src="../images/guide/analytics_volcano1.png" class="img_center" width="600"></img>
+		</div>
+    <br>
+	</div>
+</div>
+
+<div id="navcontainer3" class="alt-div-2">
+	<div id="pixdb_qi" class="section-title">
+			<div class="heading"><b><a name="pixdb_qi">2.8 Heatmap</a></b></div>
+			<div class="control"><img src="../images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
+	</div>
+	<div id="pixdb_qi_div" class="navcontainer4">
+		<br>
+    The presented heatmap illustrates integrative analysis results for the top-500 ranked genes in each biological comparisons. Genes and comparisons are represented by rows and columns, respectively.
+    The heatmap colours represent genes' ranks indicating their evidence for aberrant expression in corresponding comparison. The positive and negative values indicate up- and down-regulation, respectively.
+    The colour key is presented on the right-hand side.
+    <br><br>
+		<div style="overflow: hidden;margin-bottom:5px;">
+			<img src="../images/guide/analytics_heatmap1.png" class="img_center" width="600"></img>
+		</div>
+    <br><br>
+    This interactive heatmap allows user to to explore the combined rank for genes deregulated in individual prostate cancer development and progression stages by zooming in
+    to the area of interest.
+    <br><br>
+		<div style="overflow: hidden;margin-bottom:5px;">
+			<img src="../images/guide/analytics_heatmap2.png" class="img_center" width="600"></img>
+		</div>
+    <br>
+	</div>
+</div>
+
+<div id="navcontainer3" class="alt-div-2">
+	<div id="pixdb_qi" class="section-title">
+			<div class="heading"><b><a name="pixdb_qi">2.9 Statistics</a></b></div>
+			<div class="control"><img src="../images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
+	</div>
+	<div id="pixdb_qi_div" class="navcontainer4">
+		<br>
+    This tab summarises the cross-platform integrative analysis results and presents them in the context of the <b>molecular alterations map</b> (MAM) in prostate cancer transcriptomics space.
+    The barplot (top) illustrates the <i>log2 fold-change</i> and combined <i>p-values</i> (-log10) for selected gene in various biological comparisons presented in MAM (bottom). The colour
+    of each bar relects the gene's rank indicating its evidence for aberrant expression in corresponding comparison. The colour key is presented on the right-hand side.
+    <br><br>
+		<div style="overflow: hidden;margin-bottom:5px;">
+			<img src="../images/guide/analytics_statistics1.png" class="img_center" width="600"></img>
+		</div>
+    <br><br>
+		<div style="overflow: hidden;margin-bottom:5px;">
+      <img src="../images/bio_comp_help.png" class="img_center" width="600"></img>
+		</div>
+    <br>
+	</div>
+</div>
+
+<div id="navcontainer3" class="alt-div-2">
+	<div id="pixdb_qi" class="section-title">
+			<div class="heading"><b><a name="pixdb_qi">2.10 Summary table</a></b></div>
+			<div class="control"><img src="../images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
+	</div>
+	<div id="pixdb_qi_div" class="navcontainer4">
+		<br>
+    This tab contains a table (top) displaying genes' annotations along with their percentile ranks in various biological comparisons, presented in the molecular alterations map (bottom).
+    This summary table is presented in an interactive tabular format with filtering, pagination, and sorting options,
+    and is available for download in multiple formats.
+    <br><br>
+		<div style="overflow: hidden;margin-bottom:5px;">
+			<img src="../images/guide/analytics_summary_table1.png" class="img_center" width="600"></img>
+		</div>
+    <br><br>
+		<div style="overflow: hidden;margin-bottom:5px;">
+      <img src="../images/bio_comp_help.png" class="img_center" width="600"></img>
+		</div>
+    <br>
+	</div>
+</div>
+
+			  </div>
 			</div>
 			</div>
             </div>
           </div>
-    <div id="snpalizer_bottom_bar" >
-      <span class="tab"><a href="http://www.pancreasexpression.org:9002/" target="_blank">View PED 3.0</a></span><span class="tab">Copyright &copy; 2017 Barts Cancer Institute</span>
-    </div>
 <!-- footer END -->
 
 	</body>
