@@ -22,7 +22,7 @@ echo <<< EOT
             <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
             <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.15/css/jquery.dataTables.css"/>
             <link rel="stylesheet" href="../styles/easy-autocomplete.css">
-            
+
             <!-- SELECT2 PLUGIN -->
             <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
             <!-- CHOSEN PLUGIN -->
@@ -31,7 +31,7 @@ echo <<< EOT
             <!-- MAIN CSS -->
             <link rel="stylesheet" type="text/css" href="../styles/datatables_additional.css">
             <link rel="stylesheet" type="text/css" href="../styles/bob.css">
-            <link rel="stylesheet" type="text/css" href="../styles/pedstyle.css">
+            <link rel="stylesheet" type="text/css" href="../styles/pixdbstyle.css">
 
             <!-- JS LINKS -->
             <!-- Loading Jquery -->
@@ -91,11 +91,10 @@ echo <<< EOT
 </div>
 
 <ul id="snpalizer-nav-list">
-  <li><a href="/PIXdb/pages/index.php">Home</a></li>
-  <!-- 
-	<li><a href="/PIXdb/pages/help.html" target="_blank">User Guide</a></li>
-  -->
-	<li><a href="mailto:j.marzec@qmul.ac.uk">Contact</a></li>
+<li><a href="/PIXdb/pages/index.php">Home</a></li>
+<li><a href="/PIXdb/pages/help.php">User Guide</a></li>
+<li><a href="/PIXdb/pages/citation.php">Citation</a></li>
+<li><a href="mailto:jacek.marzec@unimelb.edu.au">Contact</a></li>
 </ul>
 
         <div class="container" id="source"> </div>
@@ -106,7 +105,7 @@ echo <<< EOT
         <script> LoadMenuSelector() </script>
 
     <div id="snpalizer_bottom_bar" >
-      <span class="tab"></span><span class="tab">Copyright &copy; 2017 Barts Cancer Institute</span>
+      <span class="tab"></span><span class="tab">Copyright &copy; 2018 Barts Cancer Institute</span>
     </div>
     </div>
     </body>
