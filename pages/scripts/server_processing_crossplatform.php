@@ -23,7 +23,7 @@ $columns = array(
 	3 => 'band',
 	4 => 'description',
 	5 => 'rank_TvsN_percentile',
-    8 => 'rank_HvsN_percentile',
+  8 => 'rank_HvsN_percentile',
 	11 => 'rank_TvsH_percentile',
 	14 => 'rank_TmvsT_percentile',
 	17 => 'rank_MvsT_percentile',
@@ -35,7 +35,7 @@ $sql.=" FROM $crossplatforms_table";
 
 // error_log($sql);
 
-  
+
 $query=mysqli_query($conn, $sql) or die("Sorry, cannot perform the query");
 $totalData = mysqli_num_rows($query);
 $totalFiltered = $totalData;  // when there is no search parameter then total number rows = total number filtered rows.
