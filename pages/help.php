@@ -103,7 +103,7 @@ echo <<< EOT
         <script> LoadHelpPage() </script>
 
     <div id="snpalizer_bottom_bar" >
-      <span class="tab"></span><span class="tab">Copyright &copy; 2018 Barts Cancer Institute</span>
+      <span class="tab"></span><span class="tab">Copyright &copy; 2021 Barts Cancer Institute</span>
     </div>
     </div>
     </body>
