@@ -4,8 +4,8 @@
 include('scripts/vars.php'); // from this point it's possible to use the variables present inside 'var.php' file
 
 // importing variables
-$iframe_directory = $relative_root_dir."pixdb_backoffice/data/platforms/Affy_U95Av2/";
-$result_directory = "$absolute_root_dir/pixdb_backoffice/data/platforms/Affy_U95Av2/";
+$iframe_directory = $relative_root_dir."pixdb_backoffice/data/platforms/Affy_U95Av2";
+$result_directory = "$absolute_root_dir/pixdb_backoffice/data/platforms/Affy_U95Av2";
 
 echo <<< EOT
   <!-- Results Section -->
@@ -54,7 +54,7 @@ echo <<< EOT
       </table>
     </center>
     <br><br>
-    
+
   <div class="container" id="platforms_results">
 
     <ul>
@@ -65,10 +65,10 @@ echo <<< EOT
       <li><a href="#co_expression_analysis">Expression correlations</a></li>
       <li><a href="#gene_networks">Gene networks</a></li>
     </ul>
-    
+
     <div id="pca">
       <div class='description'>
-        <p class='pub_det'> Principal component analyses (PCA) transforms the data into a coordinate system and presenting it as an orthogonal projection.
+        <p class='pub_det'> Principal component analysis (PCA) transforms the data into a coordinate system and presents it as an orthogonal projection.
             This reduces the dimensionality of the data, allowing for the global structure and key “components” of variation of the data to be viewed.
             Each point represents the orientation of a sample in the transcriptional space projected on the PCA,
             with different colours representing the biological group of the sample.
@@ -80,7 +80,7 @@ echo <<< EOT
       <iframe class='results' scrolling='no' src='$iframe_directory/pca_bp_1.html'></iframe>
 
     </div>
-    
+
     <div id="purity">
       <div class='description'>
         <p class='pub_det'> Cancer samples frequently contain a small proportion of infiltrating stromal and immune cells that might not
@@ -93,7 +93,7 @@ echo <<< EOT
     </div>
     <!-- putting gene selector -->
     <div class='estimate_container'>
-        <iframe class='results' id='estimate' onload='resizeIframe(this)' scrolling='no' src='$iframe_directory/estimate.html'></iframe>
+        <iframe class='results' id='estimate' scrolling='no' src='$iframe_directory/estimate.html'></iframe>
     </div>
 
     <!-- loading tumor purity datatable -->
@@ -134,17 +134,17 @@ EOT;
     // closing tumour purity table
     echo "    </tbody>
          </table>";
-                         
+
         // loading javascript to load DataTable tumour purity
         echo "<script> LoadDetailDataTable(\"Estimate\", \"Estimate\") </script>";
-        
+
     echo <<< EOT
     </div>
-    
+
     <div id="expression_heatmap">
       <div class='description'>
-        <p class='pub_det'> Unsupervised hierarchical clustering of the expression profiles is presented as heatmap with genes and samples
-            represented by columns and rows, respectively. The samples charactersitcs are also indicated on the right hand-side. Only the 200 genes
+        <p class='pub_det'> Unsupervised hierarchical clustering of the expression profiles is presented as a heatmap with genes and samples
+            represented by columns and rows, respectively. The samples groupings are also indicated on the right hand-side. Only the 200 genes
             with the highest expression variance across samples are presented.
         </p>
       </div>
@@ -155,16 +155,16 @@ EOT;
     <div id="expression_profiles">
       <div class='description'>
         <p class='pub_det'>
-          The expression profile of selected gene(s) across comparative groups are presented as both summarised and a
+          The expression profile of selected gene(s) across different groups are presented as both summarised and a
           sample views (boxplots and barplots, respectively).
         </p>
         <br><br>
-        <h4> Please select a gene of interest </h4>
+        <h4> Please select a gene of interest:</h4>
         <br>
-        <u class=note> Just the genes present in the specific study are listed and taken into account for the analysis! </u>
+        <u class=note> Just the genes present in the specific study are listed and taken into account for the analysis.</u>
         <br><br>
       </div>
-      
+
       <!-- putting gene selector -->
       <select id="gea_platforms_sel"> </select>
       <button id="gea_platforms_run" class="run"> Run analysis </button>
@@ -182,34 +182,34 @@ EOT;
     <div id="co_expression_analysis">
         <div class='description'>
             <p class='pub_det'>
-                We offer users the opportunity to identify genes that are co-expressed with their gene(s) of interest.
-                This value is calculated using the Pearson Product Moment Correlation Coefficient (PMCC) value.
+                This module performs pairwise comparisons of expression profiles between multiple user-defined genes.
+                It calculates the Pearson Product Moment Correlation Coefficient (PMCC) value to aid identification of co-expressed genes.
                 Correlations for the genes specified by the user are presented in a heatmap.
             </p>
             <br><br>
-            <h4> Please select at least 2 genes of interest (max 50 genes)</h4>
+            <h4> Please select at least 2 genes of interest (max 50 genes):</h4>
             <br>
-            <u class="note"> Just the genes present in the specific study are listed and taken into account for the analysis! </u>
+            <u class="note"> Just the genes present in the specific study are listed and taken into account for the analysis.</u>
             <br><br>
             <!-- putting gene selector -->
             <select multiple id="cea_platforms_sel"> </select>
             <br><br><br>
-            <h4> ...or you can paste you gene list here (separated by any wide space character)</h4>
+            <h4> ...or you can paste your gene list here (separated by any white space character):</h4>
             <br><br>
             <textarea id='textcea_platforms_sel' rows='3' cols='80'></textarea>
             <br>
             <button id="cea_platforms_run" class="run"> Run analysis </button>
         </div>
-    
+
         <!-- Loading div -->
         <div class='cea_platforms' id='cea_platforms'></div>
         <iframe class='results' id='cea_platforms_sel_hm'></iframe>
-    
+
         <!-- Calling Javascripts -->
         <script>LoadGeneSelector("cea_platforms_sel", "", "", "Affy_U95Av2")</script>
         <script>LoadAnalysis("cea_platforms_sel","cea_platforms_run","platforms","","Affy_U95Av2_co_expression","1")</script>
     </div>
-    
+
     <div id='gene_networks'>
       <div class='description'>
         <p class='pub_det'>
@@ -219,9 +219,9 @@ EOT;
           <table id='network_parameters_container'>
             <tr style='height:70px; vertical-align:top'>
               <td colspan=2>
-                <h4> Please select the genes of interest (maximum 5 genes) </h4>
+                <h4> Please select the genes of interest (maximum 5 genes): </h4>
                 <br>
-                <u class="note"> Just the genes present in the specific study are listed and taken into account for the analysis! </u>
+                <u class="note"> Just the genes present in the specific study are listed and taken into account for the analysis.</u>
                 <br><br>
                 <select multiple id='platforms_net_sel'></select>
                 <br><br>
@@ -229,7 +229,7 @@ EOT;
             </tr>
             <tr>
               <td>
-                <h4> Please select the interaction score threshold </h4>
+                <h4> Please select the interaction score threshold:</h4>
                 <br><br>
                 <div id='mentha-score'></div>
                 <!-- loading threshold labels -->
@@ -313,12 +313,12 @@ EOT;
       <script>LoadGeneSelector('platforms_net_sel','','','Affy_U95Av2')</script>
       <script>LoadAnalysis('platforms_net_sel','platforms_run_net','','','Affy_U95Av2_gene_network','0')</script
     </div>
-    
+
   </div>
 
 <script> LoadSelector() </script>
 <script> LoadPlatformsTable() </script>
 <script> LoadPlatformsTabs() </script>
-      
+
 EOT;
 ?>
