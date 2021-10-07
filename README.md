@@ -170,6 +170,6 @@ Rscript bcntb.estimate.R --exp_file 1243_1.processed.genename.csv --target /Libr
 
 ### Acknowledgements
 
-Huge **credit** goes to [Stefano Pirro](https://scholar.google.it/citations?user=XoSe_vwAAAAJ&hl=en) who designed the portal framework!
+Massive credit goes to **[Stefano Pirro](https://scholar.google.it/citations?user=XoSe_vwAAAAJ&hl=en)** who designed the portal framework (initially dedicated for [Pancreatic Expression Database - Analytics](http://www.analytics.pancreasexpression.org/)) that was then adapted for **[PIXdb](https://pixdb.org.uk)**!
 
 <br>
