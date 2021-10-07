@@ -100,7 +100,7 @@ SELECT * FROM Platforms;
 <br>
 
 
-### Update MySQL database using Stefano's script
+### Update MySQL database using automated script
 
 First, one needs to update the analyses.report file with lists datasets with corresponding analyses
 ```
@@ -166,4 +166,10 @@ Rscript bcntb.plotly.estimate.R --report /Library/WebServer/Documents/PIXdb_test
 ```
 Rscript bcntb.estimate.R --exp_file 1243_1.processed.genename.csv --target /Library/WebServer/Documents/PIXdb_test/pixdb_backoffice/data/E-MEXP-1243_18596959/target_for_estimate.txt  --target2 /Library/WebServer/Documents/PIXdb_test/pixdb_backoffice/data/E-MEXP-1243_18596959/target.txt --dir /Library/WebServer/Documents/PIXdb_test/pixdb_backoffice/data/E-MEXP-1243_18596959
 ```
+<br>
+
+### Acknowledgements
+
+Huge **credit** goes to [Stefano Pirro](https://scholar.google.it/citations?user=XoSe_vwAAAAJ&hl=en) who designed the portal framework!
+
 <br>
