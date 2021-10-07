@@ -109,10 +109,10 @@ for (j in 1:length(exp_files)) {
 
     selected_samples <- intersect(as.character(annData$File_name),colnames(expData))
     expData.subset <- as.data.frame(t(scale(t(data.matrix(expData[,colnames(expData) %in% selected_samples])))))
-	
+
 	##### Identify genes of interest not present in the expression matrix
 	absentGenes <- genes[genes %!in% rownames(expData)]
-	
+
 	##### Check if used-defined genes are present in the data
 	gene.expr <- expData.subset[rownames(expData) %in% genes, ]
 	genes <- rownames(gene.expr)
@@ -128,7 +128,7 @@ for (j in 1:length(exp_files)) {
 	#####  Keep only genes/probes with variance > 0 across all samples (otherwise the cor.test complains)
 	rsd<-apply(gene.expr,1,sd)
 	expData.subset <- gene.expr[rsd>0.5,]
-	
+
 	##### Calculate Pearson correlation coefficient for user-defined genes
 	corr.res <- matrix(data = 0, nrow = nrow(expData.subset), ncol = (2*length(genes))+1, dimnames = list( rownames(expData.subset), c( "Gene", paste(rep(genes, each = 2), c("Correlation", "P-value")) ) ))
 
@@ -159,7 +159,7 @@ for (j in 1:length(exp_files)) {
 
 
 	##### Generate heatmap including the top correlated genes (PLOTLY)
-	p <- heatmaply(data.frame(corr.res.genes), dendrogram="none", colors = colorRampPalette(c("darkblue","darkslateblue","darkslateblue","white","firebrick3","firebrick3","firebrick4"))(100), scale="none", trace="none", limits = c(-1,1), hide_colorbar = FALSE, fontsize_row = 8, fontsize_col = 8) %>%
+	p <- heatmaply(data.frame(corr.res.genes), labCol= rownames(corr.res.genes), labRow= colnames(corr.res.genes), dendrogram="none", colors = colorRampPalette(c("darkblue","darkslateblue","darkslateblue","white","firebrick3","firebrick3","firebrick4"))(100), scale="none", trace="none", limits = c(-1,1), hide_colorbar = FALSE, fontsize_row = 8, fontsize_col = 8) %>%
 	layout(autosize = TRUE, width = 800, margin = list(l=150, r=50, b=150, t=50, pad=4), showlegend = FALSE)
 
 	##### Save the heatmap as html (PLOTLY)
