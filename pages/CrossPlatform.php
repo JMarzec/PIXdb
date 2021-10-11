@@ -30,7 +30,8 @@ echo <<< EOT
         <i>HGPIN</i> - high-grade prostatic intraepithelial neoplasia<br>
         <i>Primary tumour</i> - primary tumour from prostate<br>
         <i>Metastatic primary tumour</i> - samples from primary tumour derived from prostate cancer patients with metastasis<br>
-        <i>Metastasis</i> - samples from metastatic prostate cancer tissues<br>
+        <i>Metastasis</i> - samples from metastatic prostate cancer tissues<br><br>
+        <i>Data available from figshare <b><a href="https://doi.org/10.6084/m9.figshare.c.5656135.v1" target="_blank">cross-platform collection</a></b></i>.<br><br>
     </tr>
   </table>
   <br>

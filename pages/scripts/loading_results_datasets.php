@@ -57,6 +57,7 @@ echo "<div class=container id='literature'>
     $cohort = $row["Cohort"];
     $all_performed_groups = explode(",",$row["Groups"]);
   }
+echo "<br><br><i>Data available from figshare <b><a href=\"https://doi.org/10.6084/m9.figshare.c.5347085.v1\" target=\"_blank\">datasets collection</a></b></i>.<br><br>";
 echo "</div>
 <div id='res_acc'> ";
 

@@ -35,6 +35,8 @@ echo <<< EOT
          -->
     </table>
     
+    <i>Data available from figshare <b><a href="https://doi.org/10.6084/m9.figshare.c.5655955.v1" target="_blank">platforms collection</a></b>.<br><br></i>
+    
     <center>
       <table>
         <tr style='text-align:center'>

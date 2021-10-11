@@ -72,7 +72,7 @@ echo <<< EOT
             </td>
         </tr>
     </table>
-
+    
     <script> LoadDatasetsTable() </script>
 EOT;
 
