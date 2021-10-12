@@ -37,7 +37,7 @@ echo <<< EOT
           <b>Per-platform:</b> This tab allows you to perform analyses using combined expression data from the same platform. Available analyses include
           PCA, estimates of tumour purity, heatmap, expression profile and correlation plots, as well as investigate gene networks.<br>
           <i>Data available from figshare <b><a href="https://doi.org/10.6084/m9.figshare.c.5655955.v1" target="_blank">platforms collection</a></b></i>.<br><br>
-          <b>Cross-platform:</b> This tab contains results from our <a href="https://pages.github.research.its.qmul.ac.uk/hfw456/transcriptomics_data_integration" target="_blank">cross-platform integrative analysis</a>
+          <b>Cross-platform:</b> This tab contains results from our <a href="https://github.com/JMarzec/transcriptomics_data_integration" target="_blank">cross-platform integrative analysis</a>
           of prostate cancer mRNA profiles from <i>normal prostate</i>, <i>high-grade prostatic intraepithelial neoplasia (HGPIN)</i>, <i>primary prostate cancers</i> from patients <i>with</i> and <i>without metastasis</i>, and <i>metastatic prostate cancer</i> tissues,
           to reveal the <b><a href="https://pubmed.ncbi.nlm.nih.gov/33477882/" target="_blank">transcriptomics landscape</a></b> of this disease (<a href="https://pubmed.ncbi.nlm.nih.gov/33477882/" target="_blank">Marzec et al., 2021</a>).
           Here you can explore the results for each biological comparison using volcano plot and heatmap, as well as query
