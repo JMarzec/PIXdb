@@ -38,4 +38,14 @@ function retrieveGeneList($expr_file) {
   return($GeneDetailsContainer);
 }
 
+// Delete Directory and Files In Directory (to keep the tmp folder empty)
+function deleteAll($dir) {
+    foreach(glob($dir . '/*') as $file) {
+        if(is_dir($file))
+            deleteAll($file);
+        else
+            unlink($file);
+    }
+    rmdir($dir);
+}
 ?>

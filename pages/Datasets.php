@@ -76,6 +76,10 @@ echo <<< EOT
     <script> LoadDatasetsTable() </script>
 EOT;
 
+// Remove files in tmp folder
+include('scripts/functions.php');
+deleteAll('../pixdb_backoffice/tmp');
+
 // MeSH filter disabled for now
 /*
   <!-- MeSH term filter (disabled for now) -->
