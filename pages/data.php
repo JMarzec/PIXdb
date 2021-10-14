@@ -92,7 +92,7 @@ echo <<< EOT
 
 <ul id="snpalizer-nav-list">
 <li><a href="/PIXdb/pages/index.php">Home</a></li>
-<li><a href="/PIXdb/pages/help.php">User Guide</a></li>
+<li><a href="/PIXdb/pages/help.php"">User Guide</a></li>
 <li><a href="/PIXdb/pages/data.php">Data</a></li>
 <li><a href="/PIXdb/pages/citation.php"">Citation</a></li>
 <li><a href="mailto:jacek.d.marzec@gmail.com">Contact</a></li>
@@ -101,7 +101,7 @@ echo <<< EOT
         <div class="container" id="source"> </div>
 
         <!-- ---------------------------------------- -->
-        <script> LoadHelpPage() </script>
+        <script> LoadDataPage() </script>
 
     <div id="snpalizer_bottom_bar" >
       <span class="tab"></span><span class="tab">Copyright &copy; 2021 Barts Cancer Institute</span>

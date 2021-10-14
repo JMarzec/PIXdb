@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Prostate Integrative Expression Database</title>
+<link rev="made" href="mailto:jacek.d.marzec@gmail.com" />
+<meta name="keywords" content="snp" />
+<meta name="copyright" content="Centre for Molecular Oncology, Institute of cancer" />
+<link rel="stylesheet" type="text/css" href="pixdbstyle.css" />
+<link rel="stylesheet" type="text/css" href="egtabs.css" />
+<script src="tabber.js" type="text/javascript" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+		$('.navcontainer4').hide();
+		/*
+		$('.control img').bind('mouseenter mouseleave', function() {
+
+				$(this).attr({
+				    src: $(this).attr('data-other-src')
+				    , 'data-other-src': $(this).attr('src')
+				})
+		});
+		*/
+		$('.control img').on({
+				'click': function(e) {
+
+						var src = ($(this).attr('src') === '../images/plus-minus-larger/expand-large-blue-Shapes4FREE.png')
+								? '../images//plus-minus-larger/collapse-large-blue-Shapes4FREE.png'
+								: '../images//plus-minus-larger/expand-large-blue-Shapes4FREE.png';
+						$(this).attr('src', src);
+						$(this).parent().parent().next().toggle();
+						e.stopPropagation();
+				}
+		});
+		$(".control").click(function (e) {
+				e.stopPropagation();
+				$(this).children("img").trigger("click");
+				});
+		$(".section-title").click(function () {
+				$(this).children(".control").trigger("click");
+				//$(this).next().toggle();
+				});
+		$("#glossary_attribute_ref").click(function () {
+				if($('#glossary_attribute_div').css('display') == 'none')
+				{
+				    $('#glossary_attribute').trigger("click");
+				}
+		});
+		$("#glossary_filter_ref").click(function () {
+				if($('#glossary_filter_div').css('display') == 'none')
+				{
+				    $('#glossary_filter').trigger("click");
+				}
+		});
+		$("tr:odd").css("background-color", "#dddddd");
+
+
+    });
+    function newPopup(url) {
+	     popupWindow = window.open(
+		   url,'popUpWindow','width=510,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+		}
+</script>
+<style type="text/css">
+		#navcontainer1
+		{
+      text-align: left;
+			list-style-type: none;
+		  font-family: Arial, "Dejavu Sans",sans-serif;
+      font-size: 20px;
+      text-decoration: none;
+      color: black;
+		}
+    #navcontainer2
+    {
+      text-align: left;
+      list-style-type: none;
+      text-align: left;
+      font-family: Arial, "Dejavu Sans",sans-serif;
+      font-size: 16px;
+      text-decoration: none;
+      color: black;
+      padding: 2px 5px 5px 5px;
+			width: 850px;
+			border-radius: 3px;
+			margin-top:5px;
+    }
+    #navcontainer3
+    {
+      padding: 2px 5px 5px 5px;
+      text-align: left;
+      list-style-type: none;
+      text-align: left;
+      font-family: Arial, "Dejavu Sans",sans-serif;
+			font-size: 15px;
+      text-decoration: none;
+      color: black;
+			width: 850px;
+			border-radius: 3px;
+			margin-top:5px;
+    }
+		.navcontainer4
+    {
+      text-align: justify;
+      list-style-type: none;
+      font-family: Arial, "Dejavu Sans",sans-serif;
+      font-size: 12px;
+      text-decoration: none;
+      color: black;
+      padding:5px;
+    }
+		#navcontainer5
+    {
+      text-align: left;
+      list-style-type: none;
+      font-family: Arial, "Dejavu Sans",sans-serif;
+			font-size: 14px;
+      text-decoration: none;
+      color: black;
+			padding: 2px 5px 5px 5px;
+			width: 850px;
+			border-radius: 3px;
+			margin-top:5px;
+    }
+    #navcontainer
+		{
+			background: transparent url(../images/list-off.gif) left center no-repeat;
+			padding: 0;
+		}
+
+		.alt-div-1{
+      background-color: #ccc;
+		}
+		.alt-div-2{
+      background-color: #ddd;
+		}
+		.alt-div-3{
+      background-color: #eee;
+		}
+		hr.double {
+			border: double;
+      width: 855px;
+      margin:0;
+		}
+		.section-title{
+			margin:5px;
+			display:inline;
+		}
+		.heading{
+      width:810px;
+      display:inline-block;
+      padding-top:5px
+		}
+		.control{
+      width:20px;
+      display:inline-block;
+      padding-top:5px
+		}
+
+</style>
+        <meta name="MSSmartTagsPreventParsing" content="TRUE">
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+</head>
+
+<body >
+
+<!--<ul id="snpalizer-nav-list">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="/biomart/martview/">PED Mart</a>
+    <ul >
+      <li><a href="/biomart/martview/">Database</a></li>
+      <li><a href="/cgi-bin/pancexp/DataSets.pl">Content</a></li>
+      <li><a href="upload.html">Upload</a></li>
+    </ul>
+  </li>
+  <li><a href="PancreaticCancerLandscape.html">Expression Landscape</a></li>
+  <li><a href="help.html">User Guide</a></li>
+  <li><a href="news.html">News</a></li>
+  <li><a href="citation.html">Citation</a></li>
+  <li><a href="mailto:help@pancreasexpression.org.uk">Contact</a></li>
+</ul>-->
+
+<div id="snpalizer-content">
+  <div id="body-content">
+    <div id="navcontainer1">
+      <div style="padding:5px;"></div>
+	  <div class="tabber " style="width:900px" align="center">
+		<div class="tabbertab tabbertabdefault">
+			   <h2>Data availability</h2>
+			<div id="navcontainer2" class="alt-div-1">
+        <div id="ped" class="section-title" >
+          <div class="heading"><b><a name="ped">1 Per-dataset</a></b></div>
+          <div class="control"><img data-other-src="../images/plus-minus-larger/collapse-large-blue-Shapes4FREE.png" src="../images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
+        </div>
+      <div id="ped_div" class="navcontainer4">
+    <br>
+		Processed, quality control-approved and normalised data from individual datasets are available from
+    figshare <b><a href="https://doi.org/10.6084/m9.figshare.c.5347085.v1" target="_blank">datasets collection</a></b>.<br><br>
+    <br>
+	</div>
+</div>
+
+<div id="navcontainer2" class="alt-div-1">
+        <div id="pixdb" class="section-title" >
+          <div class="heading"><b><a name="pixdb">2 Per-platform</a></b></div>
+          <div class="control"><img data-other-src="../images/plus-minus-larger/collapse-large-blue-Shapes4FREE.png" src="../images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
+        </div>
+        <div id="pixdb_div" class="navcontainer4">
+    <br>
+		Combined data from individual RNA-seq and microarray platforms are available from 
+    figshare <b><a href="https://doi.org/10.6084/m9.figshare.c.5655955.v1" target="_blank">platforms collection</a></b>.<br><br>
+		<br>
+	</div>
+</div>
+
+<div id="navcontainer2" class="alt-div-1">
+        <div id="pixdb" class="section-title" >
+          <div class="heading"><b><a name="pixdb">3 Cross-platform</a></b></div>
+          <div class="control"><img data-other-src="../images/plus-minus-larger/collapse-large-blue-Shapes4FREE.png" src="../images/plus-minus-larger/expand-large-blue-Shapes4FREE.png"></div>
+        </div>
+        <div id="pixdb_div" class="navcontainer4">
+    <br>
+		Cross-platform integrative analysis results from biological comparisons performed between various prostate cancer stages are available from 
+    figshare <b><a href="https://doi.org/10.6084/m9.figshare.c.5656135.v1" target="_blank">cross-platform collection</a></b>.<br><br>
+		<br>
+	</div>
+</div>
+			  </div>
+			</div>
+			</div>
+            </div>
+          </div>
+<!-- footer END -->
+
+	</body>
+</html>

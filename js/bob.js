@@ -16,6 +16,24 @@ function LoadHomePage() {
   //console.log("LoadHomePage");
 }
 
+function LoadHelpPage() {
+  $("#source.container").load("help.html");
+  $("#source.container").show();
+  //console.log("LoadHomePage");
+}
+
+function LoadDataPage() {
+  $("#source.container").load("data.html");
+  $("#source.container").show();
+  //console.log("LoadHomePage");
+}
+
+function LoadCitationPage() {
+  $("#source.container").load("citation.html");
+  $("#source.container").show();
+  //console.log("LoadHomePage");
+}
+
 function LoadSelector() {
 	$(".analysis_sel").button();
     $(".analysis_sel").click(function() {
