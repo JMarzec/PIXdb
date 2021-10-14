@@ -81,9 +81,9 @@ echo <<< EOT
 <div class="container" id="description">
   <table id="sel_container">
       <tr>
-        In total, 1,488 transcriptomic profiles from 472 normal (83 healthy or benign prostate enlargement (BPH) and 389 normal adjacent) prostate tissues,
-        33 HGPIN samples, 880 samples from primary prostate cancer patients without metastasis (primary tumour),
-        31 samples from primary prostate cancer with metastasis (metastatic primary tumour) and 72 samples from metastatic prostate cancer tissues (metastasis)
+        In total, <b>1,488 transcriptomic profiles</b> from <b>472 normal</b> prostate tissues (83 healthy or benign prostate enlargement (BPH) and 389 normal adjacent),
+        <b>33</b> high-grade prostatic intraepithelial neoplasia (<b>HGPIN</b>) samples, <b>880</b> samples from primary prostate cancer patients without metastasis (<b>primary tumour</b>),
+        <b>31</b> samples from primary prostate cancer with metastasis (<b>metastatic primary tumour</b>) and <b>72</b> samples from metastatic prostate cancer tissues (<b>metastasis</b>)
         are available for evaluation of aberrantly expressed genes associated with prostate cancer initiation, development and progression to aggressive disease.
       </tr>
       <!-- Space for some data stats -->
