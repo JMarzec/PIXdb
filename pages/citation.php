@@ -94,7 +94,7 @@ echo <<< EOT
 <li><a href="/PIXdb/pages/index.php">Home</a></li>
 <li><a href="/PIXdb/pages/help.php"">User Guide</a></li>
 <li><a href="/PIXdb/pages/citation.php"">Citation</a></li>
-<li><a href="mailto:jacek.marzec@unimelb.edu.au">Contact</a></li>
+<li><a href="mailto:jacek.d.marzec@gmail.com">Contact</a></li>
 </ul>
 
         <div class="container" id="source"> </div>
