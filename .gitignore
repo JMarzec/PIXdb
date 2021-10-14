@@ -1,4 +1,4 @@
-
+# Skip redundant files
 *DS_Store
 pixdb_backoffice/data/*
 pixdb_backoffice/tmp/*
