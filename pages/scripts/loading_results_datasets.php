@@ -43,21 +43,23 @@ echo "<div class=container id='literature'>
       ";
   /* PRESENTING PUBLICATION DETAILS */
   while( $row=mysqli_fetch_array($query) ) {
-    echo "<h4> PMID </h4> <p class='pub_det'>".$row["PMID"]."</p><br>";
-    echo "<h4> Title </h4> <p class='pub_det'>".$row["Title"]."</p><br>";
-    echo "<h4> Journal </h4> <p class='pub_det'>".$row["Journal"]."</p>";
-    echo "<h4> Pub. Date </h4> <p class='pub_det'>".$row["PubDate"]."</p><br>";
-    echo "<h4> Authors </h4> <textarea readonly id='authors' rows='2' cols='100'>".str_replace("&apo;","'",$row["Authors"])."</textarea><br><br>";
-    echo "<h4> Abstract </h4> <textarea readonly id='abstract' rows='10' cols='100'>".str_replace("&apo;","'",$row["Abstract"])."</textarea><br><br>";
-
-    echo "<p class='pub_det'> This publication contains <b>".count($ae_accessions)."</b> datasets. Please refer to the paper for further details.</p><br>";
-    echo "<center><a class='papers_link' href='https://www.ncbi.nlm.nih.gov/pubmed/".$row["PMID"]."' target='null'> Read the paper</a></center>";
+    echo "<h4> PMID &nbsp;&nbsp;</h4> <p class='pub_det'>".$row["PMID"]."</p><br>";
+    echo "<h4> Title &nbsp;&nbsp;&nbsp;&nbsp;</h4> <p class='pub_det'>".$row["Title"]."</p><br>";
+    echo "<h4> Journal </h4> <p class='pub_det'>".$row["Journal"]."</p><br>";
+    echo "<h4> Date &nbsp;&nbsp;&nbsp;&nbsp;</h4> <p class='pub_det'>".$row["PubDate"]."</p><br>";
+    echo "<h4> Authors </h4> <p class='pub_det'> </p><br>";
+    echo "<h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4> <textarea readonly id='authors' rows='2' cols='100'>".str_replace("&apo;","'",$row["Authors"])."</textarea><br><br>";
+    echo "<h4> Abstract </h4> <p class='pub_det'> </p><br>";
+    echo "<h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4> <textarea readonly id='abstract' rows='10' cols='100'>".str_replace("&apo;","'",$row["Abstract"])."</textarea><br><br>";
+    echo "<center><a class='papers_link' href='https://www.ncbi.nlm.nih.gov/pubmed/".$row["PMID"]."' target='null'> Read the paper</a></center><br><br>";
+        
+    echo "<p class='pub_det'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This publication contains <b>".count($ae_accessions)."</b> datasets. Please refer to the paper for further details.</p><br>";
 
     $all_performed_analyses = explode(",",$row["Analysis"]);
     $cohort = $row["Cohort"];
     $all_performed_groups = explode(",",$row["Groups"]);
   }
-echo "<br><br><i>Data available from figshare <b><a href=\"https://doi.org/10.6084/m9.figshare.c.5347085.v1\" target=\"_blank\">datasets collection</a></b></i>.<br><br>";
+echo "<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Data available from figshare <b><a href=\"https://doi.org/10.6084/m9.figshare.c.5347085.v1\" target=\"_blank\">datasets collection</a></b></i>.<br><br>";
 echo "</div>
 <div id='res_acc'> ";
 
@@ -279,6 +281,11 @@ echo "</div>
                     <div class='description'>
                       <p class='pub_det'>
                         Here we present an interactive tool to explore interactions among genes' products of interest.
+                        For each biological group the interactions between genes of interest and their primary neighbours are displayed within an
+                    		interactive network. The networks are based on manually curated protein-protein interaction from from <i><a href='http://mentha.uniroma2.it/' target=null>mentha</a></i> database<sup><a href='https://www.ncbi.nlm.nih.gov/pubmed/23900247' target=null>3</a></sup>.
+                        In the resulting gene networks nodes represent genes while edges represent interactions. Nodes are coloured according
+                    		to the expression level (z-score) in selected biological group. An interactive summary table with links to the publications providing evidence
+                        for individual interactions is also provided below the gene networks plot.
                       </p>
                       <br><br>
                       <table id=\"network_parameters_container\">
