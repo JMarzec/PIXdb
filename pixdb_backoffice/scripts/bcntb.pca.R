@@ -96,17 +96,18 @@ annData <- read.table(annFile,sep="\t",as.is=TRUE,header=TRUE)
 annData$File_name <- make.names(annData$File_name)
 
 for (j in 1:length(exp_files)) {
+  
   ef = paste(outFolder,"norm_files",exp_files[j],sep = "/")
 
   ##### Read file with expression data
   expData <- read.table(ef,sep="\t",header=TRUE,row.names=NULL, stringsAsFactors = FALSE)
 
   ##### Deal with the duplicated genes
-  rownames(expData) = make.names(expData$Gene.name, unique=TRUE)
+  rownames(expData) = make.names(expData$Gene, unique=TRUE)
   expData <- expData[,-1]
 
   selected_samples <- intersect(as.character(annData$File_name),colnames(expData))
-  expData.subset <- as.data.frame(t(scale(t(data.matrix(expData[,colnames(expData) %in% selected_samples])))))
+  expData.subset <- as.data.frame(data.matrix(expData[,colnames(expData) %in% selected_samples]))
 
   ##### Make sure that the samples in the expression matrix and annotaiton file are in the same order
   expData.subset <- expData.subset[, selected_samples]
@@ -135,14 +136,15 @@ for (j in 1:length(exp_files)) {
 
   ##### Generate bar-plot (PLOTLY)
   ##### Prepare data frame
-  expData_pca.df <- data.frame(paste0("PC ", c(1:length(expData_pca$sdev))), expData_pca$sdev)
+  expData_pca.df <- data.frame(paste0("PC ", c(1:length(importance_pca))), as.numeric(gsub("%", "",importance_pca)))
+  
   colnames(expData_pca.df) <- c("PC", "Variances")
   ##### The default order will be alphabetized unless specified as below
   expData_pca.df$PC <- factor(expData_pca.df$PC, levels = expData_pca.df[["PC"]])
-
+  
   p <- plot_ly(expData_pca.df, x = ~PC, y = ~Variances, type = 'bar', width = 800, height = 600) %>%
   layout(title = "The variances captured by principal components", xaxis = list(title = ""), margin = list(l=50, r=50, b=100, t=100, pad=4), autosize = F)
-
+  
   ##### Save the box-plot as html (PLOTLY)
   widget_fn = paste(outFolder,paste0("pca_bp","_",j,".html"),sep="/")
   htmlwidgets::saveWidget(p, file=widget_fn, selfcontained = FALSE)
@@ -173,7 +175,7 @@ for (j in 1:length(exp_files)) {
   ##### Generate PCA 3-D plot (PLOTLY)
   p <- plot_ly(expData_pca.df, x = ~PC1, y = ~PC2, z = ~PC3, color = ~Target, text=rownames(expData_pca.df), colors = targets.colour[[1]], type='scatter3d', mode = "markers", marker = list(size=8, symbol="circle"), width = 800, height = 800) %>%
   layout(scene = list(xaxis = list(title = paste("PC ", PC1, " (",importance_pca[PC1],")",sep="")), yaxis = list(title = paste("PC ", PC2, " (",importance_pca[PC2],")",sep="")), zaxis = list(title = paste("PC ", PC3, " (",importance_pca[PC3],")",sep="")) ), margin = list(l=50, r=50, b=50, t=10, pad=4), autosize = F, showlegend = TRUE, legend = list(orientation = leg.orientation, y = leg.y))
-
+  
   ##### Save the box-plot as html (PLOTLY)
   widget_fn = paste(outFolder,paste0("pca_3d","_",j,".html"),sep="/")
   htmlwidgets::saveWidget(p, file=widget_fn, selfcontained = FALSE)
