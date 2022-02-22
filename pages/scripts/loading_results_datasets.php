@@ -53,13 +53,13 @@ echo "<div class=container id='literature'>
     echo "<h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4> <textarea readonly id='abstract' rows='10' cols='100'>".str_replace("&apo;","'",$row["Abstract"])."</textarea><br><br>";
     echo "<center><a class='papers_link' href='https://www.ncbi.nlm.nih.gov/pubmed/".$row["PMID"]."' target='null'> Read the paper</a></center><br><br>";
         
-    echo "<p class='pub_det'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This publication contains <b>".count($ae_accessions)."</b> datasets. Please refer to the paper for further details.</p><br>";
+    echo "<p class='pub_det'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This publication contains <b>".count($ae_accessions)."</b> dataset(s). Please refer to the paper for further details.</p><br>";
 
     $all_performed_analyses = explode(",",$row["Analysis"]);
     $cohort = $row["Cohort"];
     $all_performed_groups = explode(",",$row["Groups"]);
   }
-echo "<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Data available from figshare <b><a href=\"https://doi.org/10.6084/m9.figshare.c.5347085.v1\" target=\"_blank\">datasets collection</a></b></i>.<br><br>";
+echo "<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Data available from figshare <b><a href=\"https://doi.org/10.6084/m9.figshare.c.5347085\" target=\"_blank\">datasets collection</a></b></i>.<br><br>";
 echo "</div>
 <div id='res_acc'> ";
 
